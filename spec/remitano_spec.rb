@@ -37,7 +37,7 @@ describe Remitano do
   describe :balance, vcr: {cassette_name: 'remitano/balance'} do
     context "configured" do
       subject { Remitano.balance }
-      before { setup_remitano }
+      before { configure_remitano }
       it { should == {"btc_reserved"=>"0", "fee"=>"0.4000", "btc_available"=>"0", "usd_reserved"=>"1.02", "btc_balance"=>"0", "usd_balance"=>"6953.07", "usd_available"=>"6952.05"} }
     end
     context "not configured" do
@@ -56,7 +56,7 @@ describe Remitano do
   end
 
   describe :withdraw_bitcoins do
-    before {setup_remitano}
+    before {configure_remitano}
     context "Failed to supply correct arguments", vcr: {cassette_name: 'remitano/withdraw_bitcoins/wrong_arguments'} do
       subject { Remitano.withdraw_bitcoins(amount:100) }
       #its(:error) { should == "Required parameters not supplied, :amount, :address" }
@@ -73,7 +73,7 @@ describe Remitano do
     # end
   end
   describe :unconfirmed_user_deposits, vcr: {cassette_name: 'remitano/unconfirmed_user_deposits'}  do
-    before {setup_remitano}
+    before {configure_remitano}
     subject { Remitano.unconfirmed_user_deposits }
     it {should be_kind_of Array}
 
@@ -82,7 +82,7 @@ describe Remitano do
   # Works but for privacy reasons I dont want to include the cassette
   #
   # describe :bitcoin_deposit_address, vcr: {cassette_name: 'remitano/bitcoin_deposit_address'} do
-  #   before {setup_remitano}
+  #   before {configure_remitano}
   #   subject {Remitano.bitcoin_deposit_address}
   #   #it {should match /^[13][a-zA-Z0-9]{26,33}$/} TODO:fix this spec
   # end

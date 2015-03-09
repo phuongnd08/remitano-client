@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Remitano::Orders do
-  before { setup_remitano }
+  before { configure_remitano }
 
   describe :all, vcr: {cassette_name: 'remitano/orders/all'} do
     subject { Remitano.orders.all }

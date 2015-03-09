@@ -79,7 +79,7 @@ module Remitano
     return JSON.parse Remitano::Net.get('/order_book').to_str
   end
 
-  def self.setup
+  def self.configure
     yield self
   end
 

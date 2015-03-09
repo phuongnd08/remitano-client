@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Remitano::UserTransactions do
-  before { setup_remitano }
+  before { configure_remitano }
 
   describe :all, vcr: {cassette_name: 'remitano/user_transactions/all'} do
     subject { Remitano.user_transactions.all }
@@ -22,7 +22,7 @@ describe Remitano::UserTransactions do
 end
 
 describe Remitano::Transactions do
-  before { setup_remitano }
+  before { configure_remitano }
 
   describe :all, vcr:{cassette_name: 'remitano/transactions'} do
     subject { Remitano.transactions }
