@@ -1,25 +1,27 @@
 module Remitano
   class Collection
-    attr_accessor :path
+    attr_accessor :path, :resource_name
 
     def initialize
-      self.path   = "/#{self.class.name.underscore.split("/").last.pluralize}"
+      name = self.class.name.underscore.split("/").last
+      self.resource_name = name.singularize
+      self.path = "/#{name}"
     end
 
-    def all(params = {})
+    def all
       Remitano::Helper.parse_array Remitano::Net::get(self.path)
     end
 
     def create(params = {})
-      Remitano::Helper.parse_object Remitano::Net::post(self.path, params)
+      Remitano::Helper.parse_object Remitano::Net::post(self.path, { self.resource_name => params })
     end
 
-    def find(id, params = {})
+    def find(id)
       Remitano::Helper.parse_object Remitano::Net::get("#{self.path}/#{id}")
     end
 
     def update(id, params = {})
-      Remitano::Helper.parse_object Remitano::Net::patch("#{self.path}/#{id}", params)
+      Remitano::Helper.parse_object Remitano::Net::patch("#{self.path}/#{id}", { self.resource_name => params })
     end
   end
 end
