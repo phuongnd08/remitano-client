@@ -1,19 +1,13 @@
 module Remitano
   module Helper
-    def self.parse_objects!(string, klass)
-      # If Remitano returned nothing (which it does if the results yield empty) 'cast' it to an array
-      string = "[]" if string == ""
-
-      objects = JSON.parse(string)
-      objects.collect do |t_json|
-        parse_object!(t_json, klass)
+    def self.parse_array(string)
+      JSON.parse(string).map do |hash|
+        Hashie::Mash[hash]
       end
     end
 
-    def self.parse_object!(object, klass)
-      object = JSON.parse(object) if object.is_a? String
-
-      klass.new(object)
+    def self.parse_object(string)
+      Hashie::Mash[JSON.parse(string)]
     end
   end
 end

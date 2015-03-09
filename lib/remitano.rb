@@ -1,17 +1,17 @@
+require 'active_support'
 require 'active_support/core_ext'
 require 'active_support/inflector'
 require 'active_model'
 require 'rest_client'
 require 'hmac-sha2'
+require 'hashie'
 
 require 'remitano/net'
 require 'remitano/helper'
-require 'remitano/collection'
-require 'remitano/model'
 
 require 'remitano/orders'
 require 'remitano/transactions'
-require 'remitano/ticker'
+require 'remitano/collection'
 
 String.send(:include, ActiveSupport::Inflector)
 
@@ -21,9 +21,6 @@ module Remitano
 
   # Remitano secret
   mattr_accessor :secret
-
-  # Remitano client ID
-  mattr_accessor :client_id
 
   # Currency
   mattr_accessor :currency

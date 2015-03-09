@@ -8,10 +8,10 @@ describe Remitano::Orders do
     it { should be_kind_of Array }
     describe "first order" do
       subject { Remitano.orders.all.first }
-      its(:price) { should == "1.01" }
-      its(:amount) { should == "1.00000000" }
-      its(:type) { should == 0 }
-      its(:datetime) { should == "2013-09-26 23:15:04" }
+      its(:price) { should == "372.04" }
+      its(:quantity) { should == "1.5" }
+      its(:order_type) { should == "limit" }
+      its(:created_at) { should == "2015-03-09T09:11:37.060Z" }
     end
   end
 

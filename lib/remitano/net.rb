@@ -8,8 +8,8 @@ module Remitano
       @server ||= (ENV['REMITANO_SERVER'] || "https://remitano.com")
     end
 
-    def self.get(path, params={})
-      RestClient.get(self.to_uri(path), params, auth_headers)
+    def self.get(path)
+      RestClient.get(self.to_uri(path), auth_headers)
     end
 
     def self.post(path, params={})
@@ -26,15 +26,12 @@ module Remitano
 
     def self.auth_headers
       nonce = (Time.now.to_f * 10000).to_i.to_s
-      signature = HMAC::SHA256.hexdigest(
-        Remitano.secret,
-        options[:nonce]+Remitano.client_id.to_s+options[:key]
-      ).upcase
+      signature = HMAC::SHA256.hexdigest(Remitano.secret, Remitano.key + "-" + nonce).upcase
 
       {
-        :key => Remitano.key,
-        :nonce => nonce
-        :signature => signature
+        :"X-Remitano-Key" => Remitano.key,
+        :"X-Remitano-Nonce" => nonce,
+        :"X-Remitano-Signature" => signature
       }
     end
   end

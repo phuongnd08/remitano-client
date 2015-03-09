@@ -20,20 +20,4 @@ module Remitano
     def update(options={})
     end
   end
-
-  class UserTransaction < Remitano::Model
-    attr_accessor :datetime, :id, :type, :usd, :btc, :fee, :order_id, :btc_usd, :nonce
-  end
-
-  # adding in methods to pull the last public trades list
-  class Transactions < Remitano::Model
-    attr_accessor :date, :price, :tid, :amount
-
-    def self.from_api
-      Remitano::Helper.parse_objects! Remitano::Net::get("/transactions").to_str, self
-    end
-
-  end
-
-
 end
