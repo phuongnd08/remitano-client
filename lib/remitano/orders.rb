@@ -8,5 +8,9 @@ module Remitano
     def buy(params = {})
       create params.merge(side: "buy")
     end
+
+    def cancel(order_id)
+      Remitano::Helper.parse_object Remitano::Net::post("/orders/#{order_id}/cancel")
+    end
   end
 end

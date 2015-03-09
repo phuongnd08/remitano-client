@@ -30,4 +30,11 @@ describe Remitano::Orders do
     its(:quantity) { should == "1.5" }
     its(:order_type) { should == "limit" }
   end
+
+  describe :cancel, vcr: {cassette_name: 'remitano/orders/cancel'} do
+    subject { Remitano.orders.cancel(4) }
+    its(:price) { should == "349.0" }
+    its(:side) { should == "buy" }
+    its(:status) { should == "cancelled" }
+  end
 end
