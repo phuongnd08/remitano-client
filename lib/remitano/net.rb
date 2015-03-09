@@ -1,7 +1,7 @@
 module Remitano
   module Net
     def self.to_uri(path)
-      return "#{server}/api#{path}/"
+      return "#{server}/api/v1#{path}"
     end
 
     def self.server
