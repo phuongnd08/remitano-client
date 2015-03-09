@@ -5,7 +5,7 @@ PATH
       activemodel (>= 3.1)
       activesupport (>= 3.1)
       hashie
-      rest_client (>= 1.7.3)
+      rest-client (>= 1.7.3)
       ruby-hmac (= 0.4.0)
 
 GEM
@@ -33,7 +33,7 @@ GEM
     diff-lcs (1.2.4)
     dotenv (2.0.0)
     git (1.2.5)
-    hashie (3.3.2)
+    hashie (3.4.0)
     i18n (0.7.0)
     jeweler (1.8.4)
       bundler (~> 1.0)
@@ -41,13 +41,15 @@ GEM
       rake
       rdoc
     json (1.7.7)
+    mime-types (2.4.3)
     minitest (5.5.1)
-    netrc (0.7.9)
+    netrc (0.10.3)
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
-    rest_client (1.8.3)
-      netrc (~> 0.7.7)
+    rest-client (1.7.3)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     rspec (2.13.0)
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
