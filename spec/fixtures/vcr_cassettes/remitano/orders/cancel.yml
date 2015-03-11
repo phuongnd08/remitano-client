@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:3000/api/v1/orders/4/cancel
+    uri: http://localhost:3000/api/v1/orders/72,73/cancel
     body:
       encoding: ASCII-8BIT
       string: ''
@@ -14,9 +14,9 @@ http_interactions:
       X-Remitano-Key:
       - REMITANO_KEY
       X-Remitano-Nonce:
-      - '14259030961631'
+      - '14260770090834'
       X-Remitano-Signature:
-      - 1CCEF563749B200034F9158ACA13105A1E90805C40B0CEB2791924109F86FE59
+      - C47A96C724759E24F724CC5DC697DC3F5D28C36C6EA3ABF4B7F733123B9BC2BB
       Content-Length:
       - '0'
       Content-Type:
@@ -31,22 +31,22 @@ http_interactions:
       Content-Type:
       - application/json
       Content-Length:
-      - '160'
+      - '327'
       Etag:
-      - '"5c903af63f78d317aaef0541de1b4e26"'
+      - '"efc9896d39fd4f3d1ba06019d3912c0c"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 66a4e303-9665-4fb4-b405-72b6b309990e
+      - e8b87749-5fbd-4386-860e-21c77ee00ea6
       X-Runtime:
-      - '1.102640'
+      - '0.190662'
       Connection:
       - keep-alive
       Server:
       - thin
     body:
       encoding: UTF-8
-      string: '{"id":4,"price":"349.0","quantity":"1.5","side":"buy","created_at":"2015-03-09T12:03:57.475Z","order_type":"limit","filled_quantity":"0.0","status":"cancelled"}'
+      string: '[{"id":72,"price":"372.04","quantity":"1.0","side":"buy","created_at":"2015-03-11T12:29:12.702Z","order_type":"limit","filled_quantity":"0.0","status":"cancelled"},{"id":73,"price":"373.04","quantity":"1.5","side":"buy","created_at":"2015-03-11T12:29:23.866Z","order_type":"limit","filled_quantity":"0.0","status":"cancelled"}]'
     http_version: 
-  recorded_at: Mon, 09 Mar 2015 12:11:37 GMT
+  recorded_at: Wed, 11 Mar 2015 12:30:09 GMT
 recorded_with: VCR 2.6.0

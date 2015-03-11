@@ -32,10 +32,15 @@ describe Remitano::Orders do
   end
 
   describe :cancel, vcr: {cassette_name: 'remitano/orders/cancel'} do
-    subject { Remitano.orders.cancel(4) }
-    its(:price) { should == "349.0" }
-    its(:side) { should == "buy" }
-    its(:status) { should == "cancelled" }
+    subject { Remitano.orders.cancel(72, 73) }
+
+    it "cancel multiple orders" do
+      subject.count.should == 2
+      subject.first.id.should == 72
+      subject.first.status.should == "cancelled"
+      subject.second.id.should == 73
+      subject.second.status.should == "cancelled"
+    end
   end
 
   describe :multi_get, vcr: {cassette_name: 'remitano/orders/multi_get'} do

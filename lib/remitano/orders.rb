@@ -13,8 +13,8 @@ module Remitano
       Remitano::Helper.parse_array Remitano::Net::get("/orders/#{ids.join(",")}")
     end
 
-    def cancel(order_id)
-      Remitano::Helper.parse_object Remitano::Net::post("/orders/#{order_id}/cancel")
+    def cancel(*ids)
+      Remitano::Helper.parse_array Remitano::Net::post("/orders/#{ids.join(",")}/cancel")
     end
   end
 end
