@@ -37,4 +37,24 @@ describe Remitano::Orders do
     its(:side) { should == "buy" }
     its(:status) { should == "cancelled" }
   end
+
+  describe :multi_get, vcr: {cassette_name: 'remitano/orders/multi_get'} do
+    subject { Remitano.orders.multi_get(1, 2, 3) }
+    it "returns multiple orders" do
+      subject.count.should == 3
+      subject.first.id.should == 1
+      subject.first.order_type.should == "market"
+      subject.first.status.should == "cancelled"
+
+      subject.second.id.should == 2
+      subject.second.order_type.should == "limit"
+      subject.second.price.should == "372.04"
+      subject.second.status.should == "cancelled"
+
+      subject.third.id.should == 3
+      subject.third.order_type.should == "limit"
+      subject.third.price.should == "350.0"
+      subject.third.status.should == "filled"
+    end
+  end
 end
