@@ -43,8 +43,9 @@ describe Remitano::Orders do
     end
   end
 
-  describe :multi_get, vcr: {cassette_name: 'remitano/orders/multi_get'} do
-    subject { Remitano.orders.multi_get(1, 2, 3) }
+  describe :get, vcr: {cassette_name: 'remitano/orders/get'} do
+    subject { Remitano.orders.get(1, 2, 3) }
+
     it "returns multiple orders" do
       subject.count.should == 3
       subject.first.id.should == 1

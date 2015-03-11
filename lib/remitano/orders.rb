@@ -9,7 +9,7 @@ module Remitano
       create params.merge(side: "buy")
     end
 
-    def multi_get(*ids)
+    def get(*ids)
       Remitano::Helper.parse_array Remitano::Net::get("/orders/#{ids.join(",")}")
     end
 

@@ -16,7 +16,7 @@ module Remitano
       Remitano::Helper.parse_object Remitano::Net::post(self.path, { self.resource_name => params })
     end
 
-    def find(id)
+    def get(id)
       Remitano::Helper.parse_object Remitano::Net::get("#{self.path}/#{id}")
     end
 
