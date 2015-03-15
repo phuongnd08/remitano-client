@@ -22,6 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency("activesupport", [">= 3.1"])
   spec.add_runtime_dependency("rest-client", [">= 1.7.3"])
   spec.add_runtime_dependency("ruby-hmac", ["= 0.4.0"])
+  spec.add_runtime_dependency("api-auth", [">= 1.3.1"])
   spec.add_runtime_dependency("hashie")
   spec.add_development_dependency("rspec", [">= 0"])
   spec.add_development_dependency("rdoc", ["~> 3.12"])

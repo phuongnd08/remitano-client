@@ -11,12 +11,12 @@ module Remitano
 
     def get(*ids)
       return [] if ids.empty?
-      Remitano::Helper.parse_array Remitano::Net::get("/orders/#{ids.join(",")}")
+      Remitano::Net.get("/orders/#{ids.join(",")}").execute
     end
 
     def cancel(*ids)
       return [] if ids.empty?
-      Remitano::Helper.parse_array Remitano::Net::post("/orders/#{ids.join(",")}/cancel")
+      Remitano::Net.post("/orders/#{ids.join(",")}/cancel").execute
     end
   end
 end

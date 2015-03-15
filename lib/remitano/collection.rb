@@ -9,19 +9,19 @@ module Remitano
     end
 
     def all
-      Remitano::Helper.parse_array Remitano::Net::get(self.path)
+      Remitano::Net::get(self.path).execute
     end
 
     def create(params = {})
-      Remitano::Helper.parse_object Remitano::Net::post(self.path, { self.resource_name => params })
+      Remitano::Net::post(self.path, { self.resource_name => params }).execute
     end
 
     def get(id)
-      Remitano::Helper.parse_object Remitano::Net::get("#{self.path}/#{id}")
+      Remitano::Net::get("#{self.path}/#{id}").execute
     end
 
     def update(id, params = {})
-      Remitano::Helper.parse_object Remitano::Net::patch("#{self.path}/#{id}", { self.resource_name => params })
+      Remitano::Net::patch("#{self.path}/#{id}", { self.resource_name => params }).execute
     end
   end
 end
