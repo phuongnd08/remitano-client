@@ -15,7 +15,7 @@ More info at: [https://remitano.com/article/api-key-implementation/](https://rem
 ## Setup
 
 ```ruby
-Remitano.setup do |config|
+Remitano.configure do |config|
   config.key = YOUR_API_KEY
   config.secret = YOUR_API_SECRET
 end

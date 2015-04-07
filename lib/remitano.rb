@@ -10,7 +10,6 @@ require 'remitano/net'
 require 'remitano/helper'
 
 require 'remitano/orders'
-require 'remitano/transactions'
 require 'remitano/collection'
 
 String.send(:include, ActiveSupport::Inflector)

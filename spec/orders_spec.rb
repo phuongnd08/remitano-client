@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe Remitano::Orders do
-  before { configure_remitano }
-
   describe :all, vcr: {cassette_name: 'remitano/orders/all'} do
     subject { Remitano.orders.all }
     it { should be_kind_of Array }
