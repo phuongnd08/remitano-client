@@ -4,23 +4,23 @@ http_interactions:
     method: post
     uri: http://localhost:3000/api/v1/orders
     body:
-      encoding: US-ASCII
-      string: order[order_type]=limit&order[quantity]=1.5&order[price]=349&order[side]=buy
+      encoding: UTF-8
+      string: '{"order":{"order_type":"limit","quantity":1.5,"price":349,"side":"buy"}}'
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
       Accept-Encoding:
       - gzip, deflate
-      X-Remitano-Key:
-      - REMITANO_KEY
-      X-Remitano-Nonce:
-      - '14259026364010'
-      X-Remitano-Signature:
-      - EC35C6C77DDD3145F0D0555AE82745255F2AB835F22B9FB3DA6943CC632C07D6
-      Content-Length:
-      - '76'
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
+      Content-Md5:
+      - 1edBnPmC8W4HZYC91vDu1A==
+      Date:
+      - Tue, 07 Apr 2015 12:25:21 GMT
+      Authorization:
+      - APIAuth REMITANO_KEY:OWc6E9mAp2ZT71t8/2PgO9mCwbQ=
+      Content-Length:
+      - '72'
       User-Agent:
       - Ruby
   response:
@@ -31,22 +31,22 @@ http_interactions:
       Content-Type:
       - application/json
       Content-Length:
-      - '155'
+      - '150'
       Etag:
-      - '"ffdcdd29e7dc9d4f85aa7b678b0999e8"'
+      - '"b43beaeec919ba674d59dc010bc8da83"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 858724d8-c0e2-4c13-87f7-0ac18364ed5f
+      - b1943e14-6e58-4e01-8fff-267ab29f6d04
       X-Runtime:
-      - '1.077477'
+      - '0.062002'
       Connection:
       - keep-alive
       Server:
       - thin
     body:
       encoding: UTF-8
-      string: '{"id":4,"price":"349.0","quantity":"1.5","side":"buy","created_at":"2015-03-09T12:03:57.475Z","order_type":"limit","filled_quantity":"0.0","status":"live"}'
+      string: '{"id":4,"price":349.0,"quantity":1.5,"side":"buy","created_at":"2015-03-09T12:03:57.475Z","order_type":"limit","filled_quantity":0.0,"status":"live"}'
     http_version: 
-  recorded_at: Mon, 09 Mar 2015 12:03:57 GMT
+  recorded_at: Tue, 07 Apr 2015 12:25:21 GMT
 recorded_with: VCR 2.6.0

@@ -15,17 +15,17 @@ describe Remitano::Orders do
 
   describe :sell, vcr: {cassette_name: 'remitano/orders/sell'} do
     subject { Remitano.orders.sell(order_type: "limit", :quantity => 1.2, :price => 350) }
-    its(:price) { should == "350.0" }
+    its(:price) { should == 350.0 }
     its(:side) { should == "sell" }
-    its(:quantity) { should == "1.2" }
+    its(:quantity) { should == 1.2 }
     its(:order_type) { should == "limit" }
   end
 
   describe :buy, vcr: {cassette_name: 'remitano/orders/buy'} do
     subject { Remitano.orders.buy(order_type: "limit", :quantity => 1.5, :price => 349) }
-    its(:price) { should == "349.0" }
+    its(:price) { should == 349.0 }
     its(:side) { should == "buy" }
-    its(:quantity) { should == "1.5" }
+    its(:quantity) { should == 1.5 }
     its(:order_type) { should == "limit" }
   end
 
@@ -52,12 +52,12 @@ describe Remitano::Orders do
 
       subject.second.id.should == 2
       subject.second.order_type.should == "limit"
-      subject.second.price.should == "372.04"
+      subject.second.price.should == 372.04
       subject.second.status.should == "cancelled"
 
       subject.third.id.should == 3
       subject.third.order_type.should == "limit"
-      subject.third.price.should == "350.0"
+      subject.third.price.should == 350.0
       subject.third.status.should == "filled"
     end
   end

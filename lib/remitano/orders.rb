@@ -1,6 +1,10 @@
 require_relative "collection"
 module Remitano
   class Orders < Remitano::Collection
+    def all
+      super.orders
+    end
+
     def sell(params = {})
       create params.merge(side: "sell")
     end
