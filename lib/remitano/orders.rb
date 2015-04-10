@@ -5,8 +5,8 @@ module Remitano
       super.orders
     end
 
-    def sell(params = {})
-      create params.merge(side: "sell")
+    def live
+      Remitano::Net.get("/orders/live").execute.orders
     end
 
     def buy(params = {})

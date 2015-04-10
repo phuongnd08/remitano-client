@@ -13,6 +13,18 @@ describe Remitano::Orders do
     end
   end
 
+  describe :live, vcr: {cassette_name: 'remitano/orders/live'} do
+    subject { Remitano.orders.live }
+    it { should be_kind_of Array }
+    describe "first order" do
+      subject { Remitano.orders.live.first }
+      its(:price) { should == 238.4 }
+      its(:quantity) { should == 2.6926 }
+      its(:order_type) { should == "limit" }
+      its(:created_at) { should == "2015-04-10T03:25:08.339Z" }
+      its(:status) { should == "live" }
+    end
+  end
 
   describe :create, vcr: {cassette_name: 'remitano/orders/create'} do
     subject { Remitano.orders.create(side: "sell", order_type: "limit", :quantity => 1.2, :price => 350) }
