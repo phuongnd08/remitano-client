@@ -9,8 +9,12 @@ module Remitano
       Remitano::Net.get("/orders/live").execute.orders
     end
 
-    def buy(params = {})
-      create params.merge(side: "buy")
+    def filled
+      Remitano::Net.get("/orders/filled").execute.orders
+    end
+
+    def cancelled
+      Remitano::Net.get("/orders/cancelled").execute.orders
     end
 
     def get(*ids)

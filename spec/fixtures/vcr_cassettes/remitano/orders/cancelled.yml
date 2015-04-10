@@ -1,0 +1,93 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/v1/orders/cancelled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 10 Apr 2015 04:40:08 GMT
+      Authorization:
+      - APIAuth REMITANO_KEY:pQqPQ4hgp1qfWGH8yQG6s7wwzvo=
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1679'
+      Etag:
+      - '"8e2798695bb2934f723eb5c64f667cca"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f0503611-1ccc-4d40-83ed-a15411680157
+      X-Runtime:
+      - '0.056895'
+      Connection:
+      - keep-alive
+      Server:
+      - thin
+    body:
+      encoding: UTF-8
+      string: '{"orders":[{"id":3998,"price":238.33,"quantity":1.89,"side":"buy","created_at":"2015-04-10T03:25:08.540Z","order_type":"limit","filled_quantity":0.0,"status":"cancelled"},{"id":3997,"price":238.4,"quantity":0.043,"side":"buy","created_at":"2015-04-10T03:25:08.435Z","order_type":"limit","filled_quantity":0.0,"status":"cancelled"},{"id":3995,"price":238.52,"quantity":0.0111,"side":"buy","created_at":"2015-04-10T03:25:08.240Z","order_type":"limit","filled_quantity":0.0,"status":"cancelled"},{"id":3959,"price":238.37,"quantity":0.016,"side":"buy","created_at":"2015-04-10T03:24:28.843Z","order_type":"limit","filled_quantity":0.0,"status":"cancelled"},{"id":3939,"price":238.31,"quantity":0.3221,"side":"buy","created_at":"2015-04-10T03:24:09.351Z","order_type":"limit","filled_quantity":0.0,"status":"cancelled"},{"id":3919,"price":238.31,"quantity":0.3221,"side":"buy","created_at":"2015-04-10T03:23:51.452Z","order_type":"limit","filled_quantity":0.0,"status":"cancelled"},{"id":3899,"price":238.31,"quantity":0.3221,"side":"buy","created_at":"2015-04-10T03:23:29.353Z","order_type":"limit","filled_quantity":0.0,"status":"cancelled"},{"id":3879,"price":238.31,"quantity":0.3221,"side":"buy","created_at":"2015-04-10T03:23:09.969Z","order_type":"limit","filled_quantity":0.0,"status":"cancelled"},{"id":3859,"price":238.25,"quantity":0.0111,"side":"buy","created_at":"2015-04-10T03:22:49.630Z","order_type":"limit","filled_quantity":0.0,"status":"cancelled"},{"id":3839,"price":238.25,"quantity":0.0111,"side":"buy","created_at":"2015-04-10T03:22:29.261Z","order_type":"limit","filled_quantity":0.0,"status":"cancelled"}],"current_page":1,"total_pages":92,"total_items":918}'
+    http_version: 
+  recorded_at: Fri, 10 Apr 2015 04:40:08 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/api/v1/orders
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 10 Apr 2015 04:40:08 GMT
+      Authorization:
+      - APIAuth REMITANO_KEY:1bEsSIA/Ak3aebH4x1QklEvCf0I=
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1640'
+      Etag:
+      - '"20dbeb31ef49343c40a7463693b068ff"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2da1bcdd-13b9-4cb3-9dcb-16e793b0d9ec
+      X-Runtime:
+      - '0.056874'
+      Connection:
+      - keep-alive
+      Server:
+      - thin
+    body:
+      encoding: UTF-8
+      string: '{"orders":[{"id":3998,"price":238.33,"quantity":1.89,"side":"buy","created_at":"2015-04-10T03:25:08.540Z","order_type":"limit","filled_quantity":0.0,"status":"cancelled"},{"id":3997,"price":238.4,"quantity":0.043,"side":"buy","created_at":"2015-04-10T03:25:08.435Z","order_type":"limit","filled_quantity":0.0,"status":"cancelled"},{"id":3996,"price":238.4,"quantity":2.6926,"side":"buy","created_at":"2015-04-10T03:25:08.339Z","order_type":"limit","filled_quantity":0.0,"status":"live"},{"id":3995,"price":238.52,"quantity":0.0111,"side":"buy","created_at":"2015-04-10T03:25:08.240Z","order_type":"limit","filled_quantity":0.0,"status":"cancelled"},{"id":3994,"price":238.58,"quantity":0.012,"side":"buy","created_at":"2015-04-10T03:25:08.151Z","order_type":"limit","filled_quantity":0.0,"status":"live"},{"id":3993,"price":238.79,"quantity":0.011,"side":"buy","created_at":"2015-04-10T03:25:08.053Z","order_type":"limit","filled_quantity":0.0,"status":"live"},{"id":3992,"price":238.89,"quantity":0.012,"side":"buy","created_at":"2015-04-10T03:25:07.950Z","order_type":"limit","filled_quantity":0.0,"status":"live"},{"id":3991,"price":239.13,"quantity":0.011,"side":"buy","created_at":"2015-04-10T03:25:07.855Z","order_type":"limit","filled_quantity":0.0,"status":"live"},{"id":3990,"price":239.29,"quantity":0.001,"side":"buy","created_at":"2015-04-10T03:25:07.764Z","order_type":"limit","filled_quantity":0.0,"status":"live"},{"id":3989,"price":240.95,"quantity":0.01,"side":"sell","created_at":"2015-04-10T03:25:07.671Z","order_type":"limit","filled_quantity":0.0,"status":"live"}],"current_page":1,"total_pages":393,"total_items":3927}'
+    http_version: 
+  recorded_at: Fri, 10 Apr 2015 04:40:08 GMT
+recorded_with: VCR 2.6.0

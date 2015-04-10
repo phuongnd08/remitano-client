@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/v1/orders/filled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 10 Apr 2015 04:48:03 GMT
+      Authorization:
+      - APIAuth REMITANO_KEY:capYML6NEA8ium6LT6QPDcVGU2k=
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1682'
+      Etag:
+      - '"32d2feb87c37e300a789d8f551b20acf"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - fe91e49d-efe0-40d9-b94e-de272f417566
+      X-Runtime:
+      - '0.059679'
+      Connection:
+      - keep-alive
+      Server:
+      - thin
+    body:
+      encoding: UTF-8
+      string: '{"orders":[{"id":3900,"price":240.57,"quantity":0.0447,"side":"sell","created_at":"2015-04-10T03:23:46.454Z","order_type":"limit","filled_quantity":0.0447,"status":"filled"},{"id":3889,"price":241.02,"quantity":20.0,"side":"sell","created_at":"2015-04-10T03:23:28.117Z","order_type":"limit","filled_quantity":20.0,"status":"filled"},{"id":3888,"price":240.97,"quantity":2.382,"side":"sell","created_at":"2015-04-10T03:23:27.949Z","order_type":"limit","filled_quantity":2.382,"status":"filled"},{"id":3887,"price":240.95,"quantity":0.01,"side":"sell","created_at":"2015-04-10T03:23:27.783Z","order_type":"limit","filled_quantity":0.01,"status":"filled"},{"id":3886,"price":240.86,"quantity":18.717,"side":"sell","created_at":"2015-04-10T03:23:27.546Z","order_type":"limit","filled_quantity":18.717,"status":"filled"},{"id":3885,"price":240.78,"quantity":3.314,"side":"sell","created_at":"2015-04-10T03:23:27.378Z","order_type":"limit","filled_quantity":3.314,"status":"filled"},{"id":3884,"price":240.78,"quantity":0.0299,"side":"sell","created_at":"2015-04-10T03:23:27.210Z","order_type":"limit","filled_quantity":0.0299,"status":"filled"},{"id":3883,"price":240.69,"quantity":0.011,"side":"sell","created_at":"2015-04-10T03:23:27.040Z","order_type":"limit","filled_quantity":0.011,"status":"filled"},{"id":3882,"price":240.67,"quantity":0.011,"side":"sell","created_at":"2015-04-10T03:23:26.873Z","order_type":"limit","filled_quantity":0.011,"status":"filled"},{"id":3881,"price":240.57,"quantity":19.8543,"side":"sell","created_at":"2015-04-10T03:23:26.623Z","order_type":"limit","filled_quantity":19.8543,"status":"filled"}],"current_page":1,"total_pages":216,"total_items":2151}'
+    http_version: 
+  recorded_at: Fri, 10 Apr 2015 04:48:03 GMT
+recorded_with: VCR 2.6.0

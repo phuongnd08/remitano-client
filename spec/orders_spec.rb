@@ -6,10 +6,10 @@ describe Remitano::Orders do
     it { should be_kind_of Array }
     describe "first order" do
       subject { Remitano.orders.all.first }
-      its(:price) { should == "372.04" }
-      its(:quantity) { should == "1.5" }
+      its(:price) { should be_present }
+      its(:quantity) { should be_present }
       its(:order_type) { should == "limit" }
-      its(:created_at) { should == "2015-03-09T09:11:37.060Z" }
+      its(:created_at) { should be_present }
     end
   end
 
@@ -18,11 +18,37 @@ describe Remitano::Orders do
     it { should be_kind_of Array }
     describe "first order" do
       subject { Remitano.orders.live.first }
-      its(:price) { should == 238.4 }
-      its(:quantity) { should == 2.6926 }
+      its(:price) { should be_present }
+      its(:quantity) { should be_present }
       its(:order_type) { should == "limit" }
-      its(:created_at) { should == "2015-04-10T03:25:08.339Z" }
+      its(:created_at) { should be_present }
       its(:status) { should == "live" }
+    end
+  end
+
+  describe :filled, vcr: {cassette_name: 'remitano/orders/filled'} do
+    subject { Remitano.orders.filled }
+    it { should be_kind_of Array }
+    describe "first order" do
+      subject { Remitano.orders.filled.first }
+      its(:price) { should be_present }
+      its(:quantity) { should be_present }
+      its(:order_type) { should == "limit" }
+      its(:created_at) { should be_present }
+      its(:status) { should == "filled" }
+    end
+  end
+
+  describe :cancelled, vcr: {cassette_name: 'remitano/orders/cancelled'} do
+    subject { Remitano.orders.cancelled }
+    it { should be_kind_of Array }
+    describe "first order" do
+      subject { Remitano.orders.cancelled.first }
+      its(:price) { should be_present }
+      its(:quantity) { should be_present }
+      its(:order_type) { should == "limit" }
+      its(:created_at) { should be_present }
+      its(:status) { should == "cancelled" }
     end
   end
 
