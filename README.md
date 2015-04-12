@@ -10,7 +10,7 @@ Add this line to your application's Gemfile:
 
 ## Create API Key
 
-More info at: [https://remitano.com/article/api-key-implementation/](https://remitano.com/article/api-key-implementation/)
+Visit [Settings](https://remitano.com/settings), Api section to create API key
 
 ## Setup
 
@@ -26,26 +26,34 @@ will be raised.
 
 ## Remitano ticker
 
-The remitano ticker. Returns `last`, `high`, `low`, `volume`, `bid` and `ask`
+The remitano ticker. Returns `market_bid`, `market_ask`, `last_price`
 
 ```ruby
 Remitano.ticker
 ```
 
-## Fetch your open order
+## Fetch your live order
 
 Returns an array with your open orders.
 
 ```ruby
-Remitano.orders.all
+Remitano.orders.live
 ```
 
-## Create a sell order
+## Fetch your live orders
 
-Returns an `Order` object.
+Returns an array with your live orders.
 
 ```ruby
-Remitano.orders.sell(amount: 1.0, price: 111)
+Remitano.orders.live
+```
+
+## Fetch your filled orders
+
+Returns an array with your filled orders.
+
+```ruby
+Remitano.orders.filled
 ```
 
 ## Create a buy order
@@ -53,18 +61,8 @@ Remitano.orders.sell(amount: 1.0, price: 111)
 Returns an `Order` object.
 
 ```ruby
-Remitano.orders.buy(amount: 1.0, price: 111)
+Remitano.orders.create(side: "buy", order_type: "limit", amount: 1.0, price: 260)
 ```
-
-## Fetch your transactions
-
-Returns an `Array` of `UserTransaction`.
-
-```ruby
-Remitano.user_transactions.all
-```
-
-*To be continued!**
 
 # Tests
 
