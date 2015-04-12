@@ -26,7 +26,7 @@ will be raised.
 
 ## Remitano ticker
 
-The remitano ticker. Returns `market_bid`, `market_ask`, `last_price`
+Returns `market_bid`, `market_ask`, `last_price`
 
 ```ruby
 Remitano.ticker
