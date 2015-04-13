@@ -6,11 +6,7 @@ require 'rest_client'
 require 'hmac-sha2'
 require 'hashie'
 
-require 'remitano/net'
-require 'remitano/helper'
-
-require 'remitano/orders'
-require 'remitano/price_ladders'
+Dir[File.expand_path("../remitano/**/*.rb", __FILE__)].each { |f| require f }
 
 String.send(:include, ActiveSupport::Inflector)
 
