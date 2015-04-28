@@ -17,29 +17,15 @@ module Remitano
   # Remitano secret
   mattr_accessor :secret
 
-  # Currency
-  mattr_accessor :currency
-  @@currency = :usd
-
   def self.orders
-    self.sanity_check!
-
     @@orders ||= Remitano::Orders.new
+  end
+
+  def self.executions
+    @@executions ||= Remitano::Executions.new
   end
 
   def self.configure
     yield self
   end
-
-  def self.configured?
-    self.key && self.secret
-  end
-
-  def self.sanity_check!
-    unless configured?
-      raise MissingConfigExeception.new("Remitano Gem not properly configured")
-    end
-  end
-
-  class MissingConfigExeception<Exception;end;
 end
