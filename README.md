@@ -21,10 +21,7 @@ Remitano.configure do |config|
 end
 ```
 
-If you fail to set your `key` or `secret` a `MissingConfigException`
-will be raised.
-
-## Remitano ticker
+## Remitano BTC exchange ticker
 
 Returns `market_bid`, `market_ask`, `last_price`
 
@@ -58,10 +55,14 @@ Remitano.orders.filled
 
 ## Create a buy order
 
-Returns an `Order` object.
-
 ```ruby
 Remitano.orders.create(side: "buy", order_type: "limit", amount: 1.0, price: 260)
+
+```
+## Get executions of an order
+
+```ruby
+Remitano.executions.all(order_id: 1)
 ```
 
 # Tests
