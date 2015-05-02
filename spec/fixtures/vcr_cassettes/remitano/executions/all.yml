@@ -38,7 +38,7 @@ http_interactions:
       - '84'
     body:
       encoding: UTF-8
-      string: '[{"id":"1","price":200.0,"btc_amount":0.25,"remi_amount":50.0,"self_matching":true}]'
-    http_version: 
+      string: '{"executions":[{"id":"1","price":200.0,"btc_amount":0.25,"remi_amount":50.0,"self_matching":true}]}'
+    http_version:
   recorded_at: Tue, 28 Apr 2015 11:22:12 GMT
 recorded_with: VCR 2.6.0
