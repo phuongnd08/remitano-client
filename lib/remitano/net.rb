@@ -61,16 +61,5 @@ module Remitano
       ApiAuth.sign!(req, Remitano.key, Remitano.secret)
       new(req)
     end
-
-    def self.auth_headers
-      nonce = (Time.now.to_f * 10000).to_i.to_s
-      signature = HMAC::SHA256.hexdigest(Remitano.secret, Remitano.key + "-" + nonce).upcase
-
-      {
-        :"X-Remitano-Key" => Remitano.key,
-        :"X-Remitano-Nonce" => nonce,
-        :"X-Remitano-Signature" => signature
-      }
-    end
   end
 end
