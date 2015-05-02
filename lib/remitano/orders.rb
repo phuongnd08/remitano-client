@@ -19,7 +19,8 @@ module Remitano
 
     def get(*ids)
       return [] if ids.empty?
-      Remitano::Net.get("/orders/#{ids.join(",")}").execute
+      result = Remitano::Net.get("/orders/#{ids.join(",")}").execute
+      result.orders || result
     end
 
     def cancel(*ids)
