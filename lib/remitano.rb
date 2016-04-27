@@ -1,7 +1,6 @@
 require 'active_support'
 require 'active_support/core_ext'
 require 'active_support/inflector'
-require 'active_model'
 require 'rest_client'
 require 'hmac-sha2'
 require 'hashie'
