@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:4000/api/v1/trades?trade_status=closed&trade_type=sell
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 27 Apr 2016 02:44:01 GMT
+      Authorization:
+      - APIAuth REMITANO_KEY:MJvM7z67swCSZKoTiUlJwL/2fEE=
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Etag:
+      - '"479414bd1e179d3d303bfb5c141df326"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 30d08fcf-a9b9-41e9-9334-5545c5eb2430
+      X-Runtime:
+      - '0.050666'
+      Content-Length:
+      - '709'
+    body:
+      encoding: UTF-8
+      string: '{"trades":[{"id":1,"price":22800.0,"remi_amount":275.0,"other_amount":6270000.0,"created_at":"2016-04-26T09:34:17.864Z","buyer_username":"kukien0707","seller_username":"phuongnd08","status":"cancelled","offer_data":{"id":2,"offer_type":"sell","min_amount":10.0,"max_amount":500.0,"currency":"VND","payment_time":60,"payment_descriptions":null,"payment_instructions":null,"terms_of_trade":"No
+        terms","price":22800.0,"payment_method":"local_bank","username":"phuongnd08","formatted_address":"Ha
+        Noi, Vietnam"},"payment_deadline":"2016-04-26T10:34:17.864Z","seller_sending_amount":275.0,"buyer_receiving_amount":275.0}],"meta":{"current_page":1,"next_page":null,"prev_page":null,"total_pages":1,"total_items":1}}'
+    http_version: 
+  recorded_at: Wed, 27 Apr 2016 02:44:01 GMT
+recorded_with: VCR 2.6.0

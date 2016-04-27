@@ -17,12 +17,8 @@ module Remitano
   # Remitano secret
   mattr_accessor :secret
 
-  def self.orders
-    @@orders ||= Remitano::Orders.new
-  end
-
-  def self.executions
-    @@executions ||= Remitano::Executions.new
+  def self.trades
+    @trades ||= Remitano::Trades.new
   end
 
   def self.configure
