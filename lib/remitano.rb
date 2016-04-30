@@ -25,6 +25,10 @@ module Remitano
     @trades ||= Remitano::Trades.new
   end
 
+  def self.remi_accounts
+    @remi_accounts ||= Remitano::RemiAccounts.new
+  end
+
   def self.authenticator_token
     ROTP::TOTP.new(authenticator_secret).now
   end
