@@ -29,4 +29,12 @@ describe Remitano::Trades do
       its(:status) { should == "cancelled" }
     end
   end
+
+  describe :release, vcr: {cassette_name: 'remitano/trades/release'} do
+    it "release the trade" do
+      Remitano.trades.release("2T61603008")
+      trade = Remitano.trades.get("2T61603008")
+      trade[:status].should == "released"
+    end
+  end
 end

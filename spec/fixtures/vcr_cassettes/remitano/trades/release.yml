@@ -1,0 +1,144 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:4000/api/v1/trades/2T61603008/release
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      Content-Md5:
+      - mZFLkyvTelC5g8XnyQrpOw==
+      Date:
+      - Sat, 30 Apr 2016 07:52:08 GMT
+      Authorization:
+      - APIAuth REMITANO_KEY:szLqYscrg1F+GRkYPDb4T00vHGQ=
+      Content-Length:
+      - '2'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json
+      Etag:
+      - '"bd4d2aaf0eea5879321cea067e14b616"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b4ab75b1-6ac2-4906-91f7-5a81302c22bc
+      X-Runtime:
+      - '0.067668'
+      Content-Length:
+      - '911'
+    body:
+      encoding: UTF-8
+      string: '{"id":8,"status":"pending","actionable_type":"Trade","action":"release_trade!","via":"authenticator","actionable_id":4,"message":"You
+        are releasing trade \u003Cb\u003E#4\u003C/b\u003E with \u003Cb\u003Ekukien0707\u003C/b\u003E.
+        Trading amount: \u003Cb\u003E220.0 REMI\u003C/b\u003E.","actionable":{"ref":"2T61603008","price":22800.0,"remi_amount":220.0,"other_amount":5016000.0,"created_at":"2016-04-30T07:51:48.036Z","buyer_username":"kukien0707","seller_username":"phuongnd08","status":"unpaid","offer_data":{"id":2,"offer_type":"sell","min_amount":10.0,"max_amount":500.0,"currency":"VND","payment_time":60,"payment_descriptions":null,"payment_instructions":null,"terms_of_trade":"No
+        terms","price":22800.0,"payment_method":"local_bank","username":"phuongnd08","formatted_address":"Ha
+        Noi, Vietnam"},"payment_deadline":"2016-04-30T08:51:48.036Z","seller_sending_amount":220.0,"buyer_receiving_amount":220.0}}'
+    http_version: 
+  recorded_at: Sat, 30 Apr 2016 07:52:08 GMT
+- request:
+    method: post
+    uri: http://localhost:4000/api/v1/action_confirmations/8/confirm
+    body:
+      encoding: UTF-8
+      string: '{"token":"885921"}'
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      Content-Md5:
+      - dQCkSJvqbon2orZS8CCUiw==
+      Date:
+      - Sat, 30 Apr 2016 07:52:08 GMT
+      Authorization:
+      - APIAuth REMITANO_KEY:vSElZFEEyMFZTmfabHyS1xn6mgM=
+      Content-Length:
+      - '18'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json
+      Etag:
+      - '"c9d720eb8d2f5fe07e7362f609b8b9a0"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5c3696ac-81b1-48ca-b023-db28a0b6ccec
+      X-Runtime:
+      - '0.171240'
+      Content-Length:
+      - '915'
+    body:
+      encoding: UTF-8
+      string: '{"id":8,"status":"confirmed","actionable_type":"Trade","action":"release_trade!","via":"authenticator","actionable_id":4,"message":"You
+        are releasing trade \u003Cb\u003E#4\u003C/b\u003E with \u003Cb\u003Ekukien0707\u003C/b\u003E.
+        Trading amount: \u003Cb\u003E220.0 REMI\u003C/b\u003E.","actionable":{"ref":"2T61603008","price":22800.0,"remi_amount":220.0,"other_amount":5016000.0,"created_at":"2016-04-30T07:51:48.036Z","buyer_username":"kukien0707","seller_username":"phuongnd08","status":"released","offer_data":{"id":2,"offer_type":"sell","min_amount":10.0,"max_amount":500.0,"currency":"VND","payment_time":60,"payment_descriptions":null,"payment_instructions":null,"terms_of_trade":"No
+        terms","price":22800.0,"payment_method":"local_bank","username":"phuongnd08","formatted_address":"Ha
+        Noi, Vietnam"},"payment_deadline":"2016-04-30T08:51:48.036Z","seller_sending_amount":220.0,"buyer_receiving_amount":220.0}}'
+    http_version: 
+  recorded_at: Sat, 30 Apr 2016 07:52:09 GMT
+- request:
+    method: get
+    uri: http://localhost:4000/api/v1/trades/2T61603008
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 30 Apr 2016 07:52:09 GMT
+      Authorization:
+      - APIAuth REMITANO_KEY:QhcO6MnVnBbdwbnxvWJlchuU0Zk=
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Etag:
+      - '"a92f5aacd4ba195aabb3c2f30589d7c3"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4a36c2c6-af76-42d6-8454-6bfa9fcbc75d
+      X-Runtime:
+      - '0.056172'
+      Content-Length:
+      - '657'
+    body:
+      encoding: UTF-8
+      string: '{"trade":{"ref":"2T61603008","price":22800.0,"remi_amount":220.0,"other_amount":5016000.0,"created_at":"2016-04-30T07:51:48.036Z","buyer_username":"kukien0707","seller_username":"phuongnd08","status":"released","offer_data":{"id":2,"offer_type":"sell","min_amount":10.0,"max_amount":500.0,"currency":"VND","payment_time":60,"payment_descriptions":null,"payment_instructions":null,"terms_of_trade":"No
+        terms","price":22800.0,"payment_method":"local_bank","username":"phuongnd08","formatted_address":"Ha
+        Noi, Vietnam"},"payment_deadline":"2016-04-30T08:51:48.036Z","seller_sending_amount":220.0,"buyer_receiving_amount":220.0},"role":"seller","feedback":null}'
+    http_version: 
+  recorded_at: Sat, 30 Apr 2016 07:52:09 GMT
+recorded_with: VCR 2.6.0
