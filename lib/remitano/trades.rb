@@ -19,6 +19,10 @@ module Remitano
       Remitano::Net.post("/action_confirmations/#{ac.id}/confirm", token: Remitano.authenticator_token).execute
     end
 
+    def mark_as_paid(trade_ref)
+      Remitano::Net.post("/trades/#{trade_ref}/mark_as_paid").execute
+    end
+
     def get(id)
       Remitano::Net.get("/trades/#{id}").execute.trade
     end
