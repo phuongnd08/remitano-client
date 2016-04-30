@@ -1,3 +1,5 @@
+require_relative "collection"
+
 module Remitano
   class RemiAccounts < Remitano::Collection
     def me
