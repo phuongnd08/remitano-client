@@ -21,6 +21,10 @@ module Remitano
 
   mattr_accessor :authenticator_secret
 
+  def self.offers
+    @offers ||= Remitano::Offers.new
+  end
+
   def self.trades
     @trades ||= Remitano::Trades.new
   end
