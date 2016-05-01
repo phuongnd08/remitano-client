@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:4000/api/v1/offers?offer_type=sell
+    uri: http://localhost:4000/api/v1/offers/my_offers?offer_type=sell
     body:
       encoding: US-ASCII
       string: ''
@@ -14,9 +14,9 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 01 May 2016 04:11:19 GMT
+      - Sun, 01 May 2016 07:20:30 GMT
       Authorization:
-      - APIAuth REMITANO_KEY:lDajQLE4NaU4pf3apTPBDo2zyYI=
+      - APIAuth REMITANO_KEY:3HwhendFzmR1tAlCEM19/bYOnbM=
       User-Agent:
       - Ruby
   response:
@@ -27,21 +27,21 @@ http_interactions:
       Content-Type:
       - application/json
       Etag:
-      - '"a98a4f289740b8860ed0f50b226d6989"'
+      - '"a6962bfedddd4e804370dc82ee482b63"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 74679883-6ad3-499d-8ab2-dca6195bd5b9
+      - 8d0553e1-b602-432a-b9cc-94ede6cdbcea
       X-Runtime:
-      - '3.928133'
+      - '0.132268'
       Content-Length:
       - '813'
     body:
       encoding: UTF-8
       string: '{"offers":[{"id":2,"canonical_name":"buy-bitcoin-easy-with-vnd-in-vietnam-via-local-bank-transfer","offer_type":"sell","min_amount":10.0,"max_amount":500.0,"currency":"VND","payment_time":60,"payment_descriptions":null,"terms_of_trade":"No
-        terms","price":22800.0,"formatted_price":"22,800 VND","payment_method":"local_bank","username":"phuongnd08","counter_offer_type":"buy","disabled":false,"user_summary":"(0%;2)","last_active":"2016-05-01T10:30:46.000+07:00","location":{"id":2,"locatable_id":2,"locatable_type":"Offer","country_name":"Vietnam","country_code":"VN","area1":"Ha
+        terms","price":25050.0,"formatted_price":"25,050 VND","payment_method":"local_bank","username":"phuongnd08","counter_offer_type":"buy","disabled":false,"user_summary":"(0%;2)","last_active":"2016-05-01T14:20:30.000+07:00","location":{"id":2,"locatable_id":2,"locatable_type":"Offer","country_name":"Vietnam","country_code":"VN","area1":"Ha
         Noi","area2":null,"zip":null,"formatted_address":"Ha Noi, Vietnam","lat":21.0333,"lng":105.85,"short_formatted_address":"Ha
         Noi, Vietnam"}}],"meta":{"current_page":1,"next_page":null,"prev_page":null,"total_pages":1,"total_items":1}}'
     http_version: 
-  recorded_at: Sun, 01 May 2016 04:11:23 GMT
+  recorded_at: Sun, 01 May 2016 07:20:30 GMT
 recorded_with: VCR 2.6.0
