@@ -49,7 +49,8 @@ module Remitano
     def self.new_request(method, path, params=nil)
       options = {
         :url => self.to_uri(path),
-        :method => method
+        :method => method,
+        :timeout => 20
       }
       options[:payload] = params.to_json if params
 
