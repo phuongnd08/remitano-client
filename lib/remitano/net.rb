@@ -26,6 +26,20 @@ module Remitano
       @server ||= (ENV['REMITANO_SERVER'] || "https://remitano.com")
     end
 
+    def self.public_get(path, params = {})
+      options = {
+        :url => self.to_uri(path),
+        :method => :get,
+        :timeout => 20,
+        :headers => {
+          :params => params
+        }
+      }
+      req = RestClient::Request.new(options)
+      req.headers['Content-Type'] = 'application/json'
+      new(req)
+    end
+
     def self.get(path)
       request = new_request(:get, path)
       sign_request(request)
