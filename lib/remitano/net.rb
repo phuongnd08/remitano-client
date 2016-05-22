@@ -32,7 +32,8 @@ module Remitano
         :method => :get,
         :timeout => 20,
         :headers => {
-          :params => params
+          :params => params,
+          :lang => "vi"
         }
       }
       req = RestClient::Request.new(options)
