@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:4000/api/v1/btc_rates/fetch
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 30 Jul 2016 09:10:08 GMT
+      Authorization:
+      - APIAuth REMITANO_KEY:6XaDTeseY0EouE/A2Gbto0FxyyU=
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"3ef5563fbb3dcc5da1393fe88927cfa2"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 67c50a37-bf5a-42b5-991b-67b174ad9678
+      X-Runtime:
+      - '0.086967'
+      Content-Length:
+      - '115'
+    body:
+      encoding: UTF-8
+      string: '{"bid":654.34,"ask":654.34,"remi_vnd_bid":22500.0,"remi_vnd_ask":30303.0,"bid_vnd":14722650.0,"ask_vnd":19630200.0}'
+    http_version: 
+  recorded_at: Sat, 30 Jul 2016 09:10:09 GMT
+recorded_with: VCR 2.6.0

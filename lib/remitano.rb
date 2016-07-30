@@ -33,6 +33,10 @@ module Remitano
     @remi_accounts ||= Remitano::RemiAccounts.new
   end
 
+  def self.rates
+    @rates ||= Remitano::Rates.new
+  end
+
   def self.authenticator_token
     ROTP::TOTP.new(authenticator_secret).now
   end
