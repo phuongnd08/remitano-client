@@ -34,7 +34,7 @@ module Remitano
   end
 
   def self.rates
-    @rates ||= Remitano::Rates.new
+    @rates ||= Remitano::Public::BtcRates.new
   end
 
   def self.authenticator_token
