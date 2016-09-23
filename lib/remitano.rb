@@ -33,6 +33,10 @@ module Remitano
     @remi_accounts ||= Remitano::RemiAccounts.new
   end
 
+  def self.btc_accounts
+    @btc_accounts ||= Remitano::BtcAccounts.new
+  end
+
   def self.rates
     @rates ||= Remitano::Public::BtcRates.new
   end
