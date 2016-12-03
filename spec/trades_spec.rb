@@ -2,10 +2,10 @@ require 'spec_helper'
 
 describe Remitano::Trades do
   describe :active, vcr: {cassette_name: 'remitano/trades/active'} do
-    subject { Remitano.trades.active("sell") }
+    subject { Remitano.trades.active("sell").trades }
     its(:length) { should == 1 }
     describe "first trade" do
-      subject { Remitano.trades.active("sell").first }
+      subject { Remitano.trades.active("sell").trades.first }
       its(:price) { should == 22800 }
       its(:seller_sending_amount) { should == 275 }
       its(:buyer_username) { should be_present }
@@ -17,10 +17,10 @@ describe Remitano::Trades do
   end
 
   describe :closed, vcr: {cassette_name: 'remitano/trades/closed'} do
-    subject { Remitano.trades.closed("sell") }
+    subject { Remitano.trades.closed("sell").trades }
     its(:length) { should == 1 }
     describe "first trade" do
-      subject { Remitano.trades.closed("sell").first }
+      subject { Remitano.trades.closed("sell").trades.first }
       its(:price) { should == 22800}
       its(:buyer_receiving_amount) { should == 275 }
       its(:buyer_username) { should be_present }
