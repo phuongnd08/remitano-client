@@ -1,13 +1,15 @@
 require_relative "collection"
 module Remitano
   class Trades < Remitano::Collection
-    def active(buy_or_sell)
+    def active(buy_or_sell, page: nil)
       options = { trade_type: buy_or_sell, trade_status: "active" }
+      (options[:page] = page) if page
       Remitano::Net.get("/trades?#{options.to_query}").execute.trades
     end
 
-    def closed(buy_or_sell)
+    def closed(buy_or_sell, page: nil)
       options = { trade_type: buy_or_sell, trade_status: "closed" }
+      (options[:page] = page) if page
       Remitano::Net.get("/trades?#{options.to_query}").execute.trades
     end
 
