@@ -45,6 +45,10 @@ module Remitano
     @btc_withdrawals ||= Remitano::BtcWithdrawals.new
   end
 
+  def self.action_confirmations
+    @action_confirmations ||= Remitano::ActionConfirmations.new
+  end
+
   def self.authenticator_token
     ROTP::TOTP.new(authenticator_secret).now
   end
