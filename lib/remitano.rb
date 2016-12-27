@@ -41,6 +41,10 @@ module Remitano
     @rates ||= Remitano::Public::BtcRates.new
   end
 
+  def self.btc_withdrawals
+    @btc_withdrawals ||= Remitano::BtcWithdrawals.new
+  end
+
   def self.authenticator_token
     ROTP::TOTP.new(authenticator_secret).now
   end
