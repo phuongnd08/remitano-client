@@ -6,6 +6,10 @@ module Remitano
       Remitano::Net.get("/btc_withdrawals").execute
     end
 
+    def cancel(id)
+      Remitano::Net.post("/btc_withdrawals/#{id}/cancel").execute
+    end
+
     def withdraw(btc_address, btc_amount)
       params = {
         btc_address: btc_address,
