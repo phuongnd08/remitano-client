@@ -17,7 +17,7 @@ module Remitano
       ac = Remitano::Net.post("/trades/#{trade_ref}/release").execute
       if Remitano.authenticator_secret.present?
         puts "Submitting token"
-        Remitano::Net.post("/action_confirmations/#{ac.id}/confirm", token: Remitano.authenticator_token).execute
+        Remitano.action_confirmations.confirm!(ac.id).execute
       end
     end
 
