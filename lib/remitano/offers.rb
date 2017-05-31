@@ -6,7 +6,8 @@ module Remitano
     end
 
     def update(offer_id, params)
-      Remitano::Net.patch("/offers/#{offer_id}", params).execute
+      response = Remitano::Net.patch("/offers/#{offer_id}", params).execute
+      Remitano.action_confirmations.confirm_if_neccessary!(response)
     end
 
     def enable(offer_id)

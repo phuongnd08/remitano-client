@@ -14,11 +14,8 @@ module Remitano
     end
 
     def release(trade_ref)
-      ac = Remitano::Net.post("/trades/#{trade_ref}/release").execute
-      if Remitano.authenticator_secret.present?
-        puts "Submitting token"
-        Remitano.action_confirmations.confirm!(ac.id).execute
-      end
+      response = Remitano::Net.post("/trades/#{trade_ref}/release").execute
+      Remitano.action_confirmations.confirm_if_neccessary!(response)
     end
 
     def dispute(trade_ref)

@@ -5,5 +5,14 @@ module Remitano
     def confirm!(id)
       Remitano::Net.post("/action_confirmations/#{id}/confirm", token: Remitano.authenticator_token).execute
     end
+
+    def confirm_if_neccessary!(response)
+      if response.is_action_confirmation
+        puts "Submitting token"
+        confirm!(response.id).execute
+      else
+        response
+      end
+    end
   end
 end

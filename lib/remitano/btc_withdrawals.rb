@@ -15,7 +15,8 @@ module Remitano
         btc_address: btc_address,
         btc_amount: btc_amount
       }
-      Remitano::Net.post("/btc_withdrawals", btc_withdrawal: params).execute
+      response = Remitano::Net.post("/btc_withdrawals", btc_withdrawal: params).execute
+      Remitano.action_confirmations.confirm_if_neccessary!(response)
     end
   end
 end
