@@ -9,7 +9,7 @@ module Remitano
     def confirm_if_neccessary!(response)
       if response.is_action_confirmation
         puts "Submitting token"
-        confirm!(response.id).execute
+        confirm!(response.id)
       else
         response
       end
