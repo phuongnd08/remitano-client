@@ -29,20 +29,16 @@ module Remitano
     @trades ||= Remitano::Trades.new
   end
 
-  def self.remi_accounts
-    @remi_accounts ||= Remitano::RemiAccounts.new
-  end
-
-  def self.btc_accounts
-    @btc_accounts ||= Remitano::BtcAccounts.new
+  def self.coin_accounts
+    @coin_accounts ||= Remitano::BtcAccounts.new
   end
 
   def self.rates
     @rates ||= Remitano::Public::BtcRates.new
   end
 
-  def self.btc_withdrawals
-    @btc_withdrawals ||= Remitano::BtcWithdrawals.new
+  def self.coin_withdrawals
+    @coin_withdrawals ||= Remitano::BtcWithdrawals.new
   end
 
   def self.action_confirmations

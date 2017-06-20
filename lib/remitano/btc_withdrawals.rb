@@ -3,19 +3,19 @@ require_relative "collection"
 module Remitano
   class BtcWithdrawals< Remitano::Collection
     def my_withdrawals
-      Remitano::Net.get("/btc_withdrawals").execute
+      Remitano::Net.get("/coin_withdrawals").execute
     end
 
     def cancel(id)
-      Remitano::Net.post("/btc_withdrawals/#{id}/cancel").execute
+      Remitano::Net.post("/coin_withdrawals/#{id}/cancel").execute
     end
 
-    def withdraw(btc_address, btc_amount)
+    def withdraw(coin_address, btc_amount)
       params = {
-        btc_address: btc_address,
-        btc_amount: btc_amount
+        coin_address: coin_address,
+        coin_amount: btc_amount
       }
-      response = Remitano::Net.post("/btc_withdrawals", btc_withdrawal: params).execute
+      response = Remitano::Net.post("/coin_withdrawals", coin_withdrawal: params).execute
       Remitano.action_confirmations.confirm_if_neccessary!(response)
     end
   end
