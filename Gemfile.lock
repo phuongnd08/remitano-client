@@ -42,7 +42,7 @@ GEM
       git (>= 1.2.5)
       rake
       rdoc
-    json (1.7.7)
+    json (1.8.6)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
@@ -93,4 +93,4 @@ DEPENDENCIES
   webmock (~> 1.13.0)
 
 BUNDLED WITH
-   1.12.3
+   1.14.6

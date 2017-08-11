@@ -49,7 +49,7 @@ http_interactions:
   recorded_at: Sun, 01 May 2016 04:18:29 GMT
 - request:
     method: get
-    uri: http://localhost:4000/api/v1/offers/my_offers?offer_type=sell
+    uri: http://localhost:4000/api/v1/offers/my_offers?coin_currency=btc&offer_type=sell
     body:
       encoding: US-ASCII
       string: ''
