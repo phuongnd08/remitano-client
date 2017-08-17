@@ -41,8 +41,8 @@ module Remitano
       new(req)
     end
 
-    def self.get(path)
-      request = new_request(:get, path)
+    def self.get(path, params={})
+      request = new_request(:get, path, params)
       sign_request(request)
     end
 
