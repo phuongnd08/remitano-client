@@ -13,6 +13,7 @@ module Remitano
     def withdraw(coin_address, btc_amount)
       params = {
         coin_address: coin_address,
+        coin_currency: "btc",
         coin_amount: btc_amount
       }
       response = Remitano::Net.post("/coin_withdrawals", coin_withdrawal: params).execute
