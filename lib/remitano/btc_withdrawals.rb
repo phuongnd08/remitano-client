@@ -3,7 +3,7 @@ require_relative "collection"
 module Remitano
   class BtcWithdrawals< Remitano::Collection
     def my_withdrawals
-      Remitano::Net.get("/coin_withdrawals", coin_currency: "btc").execute
+      Remitano::Net.get("/coin_withdrawals?coin_currency=btc").execute
     end
 
     def cancel(id)
