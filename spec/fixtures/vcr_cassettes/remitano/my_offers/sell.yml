@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:4000/api/v1/offers/my_offers?coin_currency=btc&offer_type=sell
+    uri: REMITANO_SERVER/api/v1/offers/my_offers?coin_currency=btc&offer_type=sell
     body:
       encoding: US-ASCII
       string: ''

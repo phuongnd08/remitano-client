@@ -1,5 +1,6 @@
 require 'vcr'
 require 'webmock/rspec'
+require_relative 'crendentials'
 
 VCR.configure do |c|
   c.allow_http_connections_when_no_cassette = false
@@ -7,11 +8,10 @@ VCR.configure do |c|
   c.hook_into :webmock # or :fakeweb
   c.configure_rspec_metadata!
   c.default_cassette_options = { record: :none }
-  c.filter_sensitive_data('REMITANO_KEY') do |interaction|
-    ENV['REMITANO_KEY']
-  end
-  c.filter_sensitive_data('REMITANO_SECRET') do |interaction|
-    ENV['REMITANO_SECRET']
+  %w(REMITANO_KEY REMITANO_SECRET REMITANO_SERVER).each do |key|
+    c.filter_sensitive_data(key) do |interaction|
+      ENV[key]
+    end
   end
 end
 

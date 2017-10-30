@@ -1,3 +1,8 @@
+ENV['REMITANO_KEY'] = 'key'
+ENV['REMITANO_SECRET'] = 'secret'
+ENV['REMITANO_AUTHENTICATOR_SECRET'] = 'secret'
+ENV["REMITANO_SERVER"] = "http://localhost:4000"
+
 RSpec.configure do |config|
   config.before(:each) do
     Remitano.configure do |config|

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:4000/api/v1/btc_rates/fetch
+    uri: REMITANO_SERVER/api/v1/btc_rates/fetch
     body:
       encoding: US-ASCII
       string: ''
@@ -39,6 +39,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"bid":654.34,"ask":654.34,"remi_vnd_bid":22500.0,"remi_vnd_ask":30303.0,"bid_vnd":14722650.0,"ask_vnd":19630200.0}'
-    http_version: 
+    http_version:
   recorded_at: Sat, 30 Jul 2016 09:10:09 GMT
 recorded_with: VCR 2.6.0
