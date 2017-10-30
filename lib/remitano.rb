@@ -34,7 +34,7 @@ module Remitano
   end
 
   def self.rates
-    @rates ||= Remitano::Public::BtcRates.new
+    @rates ||= Remitano::Public::CoinRates.new
   end
 
   def self.coin_withdrawals
