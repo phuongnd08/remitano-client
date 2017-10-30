@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: REMITANO_SERVER/api/v1/offers/2
+    uri: REMITANO_SERVER/api/v1/offers/2?coin_currency=btc
     body:
       encoding: UTF-8
       string: '{"price":21800}'
