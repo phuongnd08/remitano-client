@@ -1,14 +1,14 @@
-require_relative "collection"
+require_relative "coin_collection"
 module Remitano
-  class Trades < Remitano::Collection
+  class Trades < Remitano::CoinCollection
     def active(buy_or_sell, page: nil)
-      options = { trade_type: buy_or_sell, trade_status: "active", coin_currency: "btc" }
+      options = { trade_type: buy_or_sell, trade_status: "active", coin_currency: coin }
       (options[:page] = page) if page
       Remitano::Net.get("/trades?#{options.to_query}").execute
     end
 
     def closed(buy_or_sell, page: nil)
-      options = { trade_type: buy_or_sell, trade_status: "closed", coin_currency: "btc" }
+      options = { trade_type: buy_or_sell, trade_status: "closed", coin_currency: coin }
       (options[:page] = page) if page
       Remitano::Net.get("/trades?#{options.to_query}").execute
     end

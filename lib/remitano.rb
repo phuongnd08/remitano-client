@@ -22,15 +22,15 @@ module Remitano
   mattr_accessor :authenticator_secret
 
   def self.offers
-    @offers ||= Remitano::Offers.new
+    @offers ||= Remitano::Offers
   end
 
   def self.trades
-    @trades ||= Remitano::Trades.new
+    @trades ||= Remitano::Trades
   end
 
   def self.coin_accounts
-    @coin_accounts ||= Remitano::BtcAccounts.new
+    @coin_accounts ||= Remitano::CoinAccounts
   end
 
   def self.rates
@@ -38,7 +38,7 @@ module Remitano
   end
 
   def self.coin_withdrawals
-    @coin_withdrawals ||= Remitano::BtcWithdrawals.new
+    @coin_withdrawals ||= Remitano::CoinWithdrawals
   end
 
   def self.action_confirmations
