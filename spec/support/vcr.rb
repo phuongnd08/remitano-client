@@ -7,7 +7,7 @@ VCR.configure do |c|
   c.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   c.hook_into :webmock # or :fakeweb
   c.configure_rspec_metadata!
-  c.default_cassette_options = { record: :none }
+  c.default_cassette_options = { record: :once }
   %w(REMITANO_KEY REMITANO_SECRET REMITANO_SERVER).each do |key|
     c.filter_sensitive_data(key) do |interaction|
       ENV[key]
