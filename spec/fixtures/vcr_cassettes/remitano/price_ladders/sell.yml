@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: REMITANO_SERVER/api/v1/price_ladders/btcusdt
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin14.5.0 x86_64) ruby/2.4.3p205
+      Lang:
+      - vi
+      Host:
+      - localhost:3100
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '246'
+      Etag:
+      - W/"583d07b245304e264c0b939b032b025e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - fb5d637c-5d35-4357-b58e-40a624d4f0f1
+      X-Runtime:
+      - '0.286067'
+      Vary:
+      - Origin
+      Connection:
+      - keep-alive
+      Server:
+      - thin
+    body:
+      encoding: UTF-8
+      string: '{"sell":[[1000.0,0.20000000000000002],[1200.0,0.40000000000000002],[1300.0,0.59999999999999998],[1400.0,0.80000000000000004]],"buy":[[900.0,0.20000000000000002],[800.0,0.40000000000000002],[700.0,0.59999999999999998],[600.0,0.80000000000000004]]}'
+    http_version: 
+  recorded_at: Thu, 05 Apr 2018 03:55:11 GMT
+recorded_with: VCR 4.0.0
