@@ -15,7 +15,7 @@ module Remitano
 
     def release(trade_ref)
       response = Remitano::Net.post("/trades/#{trade_ref}/release").execute
-      Remitano.action_confirmations.confirm_if_neccessary!(response)
+      Remitano::ActionConfirmations.confirm_if_neccessary!(response)
     end
 
     def dispute(trade_ref)

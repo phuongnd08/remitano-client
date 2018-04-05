@@ -7,7 +7,7 @@ module Remitano
 
     def update(offer_id, params)
       response = Remitano::Net.patch("/offers/#{offer_id}?coin_currency=#{coin}", params).execute
-      Remitano.action_confirmations.confirm_if_neccessary!(response)
+      Remitano::ActionConfirmations.confirm_if_neccessary!(response)
     end
 
     def enable(offer_id)
