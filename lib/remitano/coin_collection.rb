@@ -2,7 +2,7 @@ require_relative "collection"
 
 module Remitano
   class CoinCollection < Collection
-    COIN_CURRENCIES = %w(btc eth)
+    COIN_CURRENCIES = %w(btc eth bch usdt)
 
     attr_reader :coin
 
