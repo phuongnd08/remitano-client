@@ -95,7 +95,7 @@ DEPENDENCIES
   remitano!
   rspec
   vcr (~> 2.6.0)
-  webmock
+  webmock (~> 3.3.0)
 
 BUNDLED WITH
    1.16.1
