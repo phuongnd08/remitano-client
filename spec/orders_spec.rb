@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Remitano::Orders do
   describe :open, vcr: {cassette_name: 'remitano/orders/open'} do
-    subject { Remitano::Orders.open("btcusdt", "sell") }
+    subject { Remitano::Orders.open("btcusdt", page: 1) }
     it "returns list of orders" do
       expect(subject["orders"].count).to eq 4
       expect(subject["orders"].first["status"]).to eq "open"

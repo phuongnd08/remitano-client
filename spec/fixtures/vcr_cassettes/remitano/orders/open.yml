@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: REMITANO_SERVER/api/v1/orders/open?pair=btcusdt&side=sell
+    uri: REMITANO_SERVER/api/v1/orders/open?page=1&pair=btcusdt
     body:
       encoding: UTF-8
       string: "{}"
@@ -16,9 +16,9 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 05 Apr 2018 01:23:58 GMT
+      - Thu, 05 Apr 2018 07:55:29 GMT
       Authorization:
-      - APIAuth REMITANO_KEY:Z++7a4souoFjsXNGIX/PmGEyAlg=
+      - APIAuth REMITANO_KEY:ppapfezucyncQcdTYlCdjGQ5c1E=
       Content-Length:
       - '2'
       Host:
@@ -37,9 +37,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - fde24e3d-ffeb-46ec-8907-9e110e940f56
+      - 9a23c2a0-0ccc-409c-af0b-c99df3622382
       X-Runtime:
-      - '3.297311'
+      - '0.394287'
       Vary:
       - Origin
       Connection:
@@ -50,5 +50,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"orders":[{"id":19,"pair":"btcusdt","side":"sell","price":1000.0,"amount":0.1,"unfilled_amount":0.1,"status":"open","status_explanation":null},{"id":20,"pair":"btcusdt","side":"sell","price":1200.0,"amount":0.2,"unfilled_amount":0.2,"status":"open","status_explanation":null},{"id":21,"pair":"btcusdt","side":"sell","price":1300.0,"amount":0.3,"unfilled_amount":0.3,"status":"open","status_explanation":null},{"id":22,"pair":"btcusdt","side":"sell","price":1400.0,"amount":0.4,"unfilled_amount":0.4,"status":"open","status_explanation":null}],"meta":{"per_page":25,"current_page":1,"next_page":null,"prev_page":null,"total_pages":1,"total_items":4}}'
     http_version: 
-  recorded_at: Thu, 05 Apr 2018 01:24:02 GMT
-recorded_with: VCR 2.6.0
+  recorded_at: Thu, 05 Apr 2018 07:55:30 GMT
+recorded_with: VCR 4.0.0

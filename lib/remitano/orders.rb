@@ -2,8 +2,8 @@ require_relative "coin_collection"
 
 module Remitano
   class Orders < Remitano::CoinCollection
-    def self.open(pair, side)
-      Remitano::Net.get("/orders/open?pair=#{pair}&side=#{side}").execute
+    def self.open(pair, **params)
+      Remitano::Net.get("/orders/open?pair=#{pair}&#{params.to_query}").execute
     end
 
     def self.cancel(id)
