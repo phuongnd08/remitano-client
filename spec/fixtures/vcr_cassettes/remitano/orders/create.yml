@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: REMITANO_SERVER/api/v1/orders
+    body:
+      encoding: UTF-8
+      string: '{"pair":"btcusdt","side":"sell","price":"10000","amount":0.001}'
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin14.5.0 x86_64) ruby/2.4.3p205
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 05 Apr 2018 01:27:13 GMT
+      Authorization:
+      - APIAuth REMITANO_KEY:jqoT1FNIiD8jyQSEhbs/SzZNuaM=
+      Content-Length:
+      - '63'
+      Host:
+      - localhost:3100
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '139'
+      Etag:
+      - W/"21dd8ddb7ef1ee95935c1564c4842738"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - da56f266-b2ad-410f-95db-0e179c25ea2a
+      X-Runtime:
+      - '0.643958'
+      Vary:
+      - Origin
+      Connection:
+      - keep-alive
+      Server:
+      - thin
+    body:
+      encoding: UTF-8
+      string: '{"id":27,"pair":"btcusdt","side":"sell","price":10000.0,"amount":0.001,"unfilled_amount":"0.001","status":"open","status_explanation":null}'
+    http_version: 
+  recorded_at: Thu, 05 Apr 2018 01:27:14 GMT
+recorded_with: VCR 4.0.0

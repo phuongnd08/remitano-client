@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: REMITANO_SERVER/api/v1/orders/27/cancel
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin14.5.0 x86_64) ruby/2.4.3p205
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 05 Apr 2018 01:27:52 GMT
+      Authorization:
+      - APIAuth REMITANO_KEY:5uxynj3rEcr3pXK0VI2kxgLlRY8=
+      Content-Length:
+      - '2'
+      Host:
+      - localhost:3100
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '151'
+      Etag:
+      - W/"90b0c29136d2b41c17f3f38d13a6bb12"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b9098673-7085-47ed-ba2d-334320e8f601
+      X-Runtime:
+      - '0.136347'
+      Vary:
+      - Origin
+      Connection:
+      - keep-alive
+      Server:
+      - thin
+    body:
+      encoding: UTF-8
+      string: '{"id":27,"pair":"btcusdt","side":"sell","price":10000.0,"amount":0.001,"unfilled_amount":"0.001","status":"cancelled","status_explanation":"requested"}'
+    http_version: 
+  recorded_at: Thu, 05 Apr 2018 01:27:52 GMT
+recorded_with: VCR 4.0.0
