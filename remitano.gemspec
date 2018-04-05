@@ -8,17 +8,16 @@ Gem::Specification.new do |spec|
   spec.name = "remitano"
   spec.version = "0.0.1"
 
-  spec.authors = ["Phuong Gia Su"]
+  spec.authors = ["Phuong Nguyen"]
   spec.description = "Ruby API for use with remitano."
   spec.email = "phuongnd08@gmail.com"
   spec.files = `git ls-files -z`.split("\x0")
-  spec.homepage = "http://github.com/phuongnd08/remitano-ruby"
+  spec.homepage = "http://github.com/remitano/remitano-ruby"
   spec.licenses = ["MIT"]
   spec.require_paths = ["lib"]
-  spec.rubygems_version = "2.1.11"
   spec.summary = "Remitano Ruby API"
 
-  spec.add_runtime_dependency("activesupport", [">= 3.1"])
+  spec.add_runtime_dependency("activesupport", [">= 4.2.10"])
   spec.add_runtime_dependency("rest-client", [">= 1.7.3"])
   spec.add_runtime_dependency("ruby-hmac", ["= 0.4.0"])
   spec.add_runtime_dependency("api-auth", ["~> 1.3.1"])
@@ -30,7 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency("jeweler", ["~> 1.8.4"])
   spec.add_development_dependency("dotenv", ["~> 2.0.0"])
   spec.add_development_dependency("vcr", ["~> 2.6.0"])
-  spec.add_development_dependency("webmock", ["~> 1.13.0"])
+  spec.add_development_dependency("webmock", ["~> 3.3.0"])
   spec.add_development_dependency("byebug")
 end
 
