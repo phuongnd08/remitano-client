@@ -23,7 +23,7 @@ module Remitano
         coin_amount: btc_amount
       }
       response = Remitano::Net.post("/coin_withdrawals", coin_withdrawal: params).execute
-      Remitano.action_confirmations.confirm_if_neccessary!(response)
+      Remitano::ActionConfirmations.confirm_if_neccessary!(response)
     end
   end
 end
