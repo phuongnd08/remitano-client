@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+
+require "thor"
+require "remitano"
+require "dotenv"
+require "byebug"
+
+Dotenv.load
+
+Remitano.key = ENV["REMITANO_KEY"]
+Remitano.secret = ENV["REMITANO_SECRET"]
+
+class RemitanoCLI < Thor
+  desc "fetch-balance COIN", "Fetch your COIN balance"
+  def fetch_balance(coin)
+    puts "#{coin.upcase} balance: #{Remitano::CoinAccounts.of_coin(coin).me.main.available_balance}"
+  end
+end
+
+RemitanoCLI.start(ARGV)
