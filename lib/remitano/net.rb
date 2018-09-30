@@ -62,6 +62,8 @@ module Remitano
     end
 
     def self.new_request(method, path, params={})
+      p [:new_request, method, path] if Remitano.verbose
+
       options = {
         :method => method,
         :timeout => 20

@@ -21,6 +21,8 @@ module Remitano
 
   mattr_accessor :authenticator_secret
 
+  mattr_accessor :verbose
+
   def self.authenticator_token
     ROTP::TOTP.new(authenticator_secret).now
   end
