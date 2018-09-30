@@ -67,7 +67,11 @@ module Remitano
         :method => method,
         :timeout => 20
       }
-      options[:payload] = params.to_json if params
+
+      if params
+        params[:usec] = Time.now.usec
+        options[:payload] = params.to_json
+      end
 
       RestClient::Request.new(options)
     end
