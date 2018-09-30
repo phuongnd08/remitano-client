@@ -24,6 +24,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency("hashie")
   spec.add_runtime_dependency("rotp")
   spec.add_development_dependency("rspec", [">= 0"])
+  spec.add_development_dependency("rspec-mocks", [">= 3.8"])
   spec.add_development_dependency("rdoc", ["~> 3.12"])
   spec.add_development_dependency("bundler")
   spec.add_development_dependency("jeweler", ["~> 1.8.4"])
