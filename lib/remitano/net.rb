@@ -61,7 +61,12 @@ module Remitano
       sign_request(request)
     end
 
-    def self.new_request(method, path, params=nil)
+    def self.new_request(method, path, params={})
+      options = {
+        :method => method,
+        :timeout => 20
+      }
+
       usec = Time.now.usec
       if method == :get
         path += "&" if path.include?("?")
@@ -71,11 +76,7 @@ module Remitano
         options[:payload] = params.to_json
       end
 
-      options = {
-        :url => self.to_uri(path),
-        :method => method,
-        :timeout => 20
-      }
+      options[:url] = to_uri(path)
 
       RestClient::Request.new(options)
     end
