@@ -62,16 +62,20 @@ module Remitano
     end
 
     def self.new_request(method, path, params=nil)
+      usec = Time.now.usec
+      if method == :get
+        path += "&" if path.include?("?")
+        path += "usec=#{usec}"
+      else
+        params[:usec] = usec
+        options[:payload] = params.to_json
+      end
+
       options = {
         :url => self.to_uri(path),
         :method => method,
         :timeout => 20
       }
-
-      if params
-        params[:usec] = Time.now.usec
-        options[:payload] = params.to_json
-      end
 
       RestClient::Request.new(options)
     end
