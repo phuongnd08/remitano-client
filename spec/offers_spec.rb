@@ -3,7 +3,9 @@ require 'spec_helper'
 describe Remitano::Offers do
   describe :my_offers, vcr: {cassette_name: 'remitano/my_offers/sell'} do
     subject { Remitano::Offers.btc.my_offers("sell") }
-    its(:length) { should == 1 }
+    it "should have 1 item" do
+      subject.length.should == 1
+    end
   end
 
   describe :update, vcr: {cassette_name: 'remitano/offers/update'} do

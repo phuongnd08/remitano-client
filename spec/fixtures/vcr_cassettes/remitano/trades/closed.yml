@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: REMITANO_SERVER/api/v1/trades?coin_currency=btc&trade_status=closed&trade_type=sell
+    uri: REMITANO_SERVER/api/v1/trades?coin_currency=btc&trade_status=closed&trade_type=sell&usec=0
     body:
       encoding: US-ASCII
       string: ''

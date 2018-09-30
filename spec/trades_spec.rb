@@ -2,31 +2,30 @@ require 'spec_helper'
 
 describe Remitano::Trades do
   describe :active, vcr: {cassette_name: 'remitano/trades/active'} do
-    subject { Remitano::Trades.btc.active("sell").trades }
-    its(:length) { should == 1 }
     describe "first trade" do
       subject { Remitano::Trades.btc.active("sell").trades.first }
-      its(:price) { should == 22800 }
-      its(:seller_sending_amount) { should == 275 }
-      its(:buyer_username) { should be_present }
-      its(:seller_username) { should be_present }
-      its(:other_amount) { should be_present }
-      its(:created_at) { should be_present }
-      its(:status) { should == "unpaid" }
+      it "should have correct values" do
+        subject.price.should == 22800
+        subject.seller_sending_amount.should == 275
+        subject.buyer_username.should be_present
+        subject.seller_username.should be_present
+        subject.created_at.should be_present
+        subject.status.should == "unpaid"
+      end
     end
   end
 
   describe :closed, vcr: {cassette_name: 'remitano/trades/closed'} do
-    subject { Remitano::Trades.btc.closed("sell").trades }
-    its(:length) { should == 1 }
     describe "first trade" do
       subject { Remitano::Trades.btc.closed("sell").trades.first }
-      its(:price) { should == 22800}
-      its(:buyer_receiving_amount) { should == 275 }
-      its(:buyer_username) { should be_present }
-      its(:seller_username) { should be_present }
-      its(:created_at) { should be_present }
-      its(:status) { should == "cancelled" }
+      it "should have correct value" do
+        subject.price.should == 22800
+        subject.seller_sending_amount.should == 275
+        subject.buyer_username.should be_present
+        subject.seller_username.should be_present
+        subject.created_at.should be_present
+        subject.status.should == "cancelled"
+      end
     end
   end
 

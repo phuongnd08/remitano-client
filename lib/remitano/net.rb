@@ -69,7 +69,7 @@ module Remitano
 
       usec = Time.now.usec
       if method == :get
-        path += "&" if path.include?("?")
+        path += (path.include?("?") ? "&" : "?")
         path += "usec=#{usec}"
       else
         params[:usec] = usec
