@@ -15,9 +15,9 @@ describe Remitano::Trades do
     end
   end
 
-  describe :closed, vcr: {cassette_name: 'remitano/trades/closed'} do
+  describe :completed, vcr: {cassette_name: 'remitano/trades/completed'} do
     describe "first trade" do
-      subject { Remitano::Trades.btc.closed("sell").trades.first }
+      subject { Remitano::Trades.btc.completed("sell").trades.first }
       it "should have correct value" do
         subject.price.should == 22800
         subject.seller_sending_amount.should == 275

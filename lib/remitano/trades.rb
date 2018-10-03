@@ -7,8 +7,8 @@ module Remitano
       Remitano::Net.get("/trades?#{options.to_query}").execute
     end
 
-    def closed(buy_or_sell, page: nil)
-      options = { trade_type: buy_or_sell, trade_status: "closed", coin_currency: coin }
+    def completed(buy_or_sell, page: nil)
+      options = { trade_type: buy_or_sell, trade_status: "completed", coin_currency: coin }
       (options[:page] = page) if page
       Remitano::Net.get("/trades?#{options.to_query}").execute
     end
