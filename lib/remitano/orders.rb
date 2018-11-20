@@ -1,17 +1,23 @@
 require_relative "coin_collection"
 
 module Remitano
-  class Orders < Remitano::CoinCollection
-    def self.open(pair, **params)
-      Remitano::Net.get("/orders/open?pair=#{pair}&#{params.to_query}").execute
+  class Orders
+    attr_reader :remitano
+
+    def initialize(remitano: nil)
+      @remitano = remitano || Remitano.singleton
     end
 
-    def self.cancel(id)
-      Remitano::Net.post("/orders/#{id}/cancel").execute
+    def open(pair, **params)
+      remitano.net.get("/orders/open?pair=#{pair}&#{params.to_query}").execute
     end
 
-    def self.create(pair:, side:, price:, amount:)
-      Remitano::Net.post(
+    def cancel(id)
+      remitano.net.post("/orders/#{id}/cancel").execute
+    end
+
+    def create(pair:, side:, price:, amount:)
+      remitano.net.post(
         "/orders",
         pair: pair, side: side, price: price, amount: amount
       ).execute
