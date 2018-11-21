@@ -13,19 +13,16 @@ String.send(:include, ActiveSupport::Inflector)
 module Remitano
   class AuthenticatorNotConfigured < StandardError; end
 
-  def self.singleton
-    @config ||= Remitano::Config.new
+  def self.default_config
+    @default_config ||= Remitano::Config.new
   end
 
   class Config
     # API Key
     attr_accessor :key
-
     # Remitano secret
     attr_accessor :secret
-
     attr_accessor :authenticator_secret
-
     attr_accessor :verbose
 
     def authenticator_token
@@ -33,16 +30,16 @@ module Remitano
     end
 
     def net
-      @net ||= Remitano::Net.new(remitano: self)
+      @net ||= Remitano::Net.new(config: self)
     end
 
     def action_confirmations
-      @action_confirmations ||= Remitano::ActionConfirmations.new(remitano: self)
+      @action_confirmations ||= Remitano::ActionConfirmations.new(config: self)
     end
 
     def coin_accounts(coin)
       @coin_accounts ||= {}
-      @coin_accounts[coin] ||= Remitano::CoinAccounts.new(coin, remitano: self)
+      @coin_accounts[coin] ||= Remitano::CoinAccounts.new(coin, config: self)
     end
 
     def configure

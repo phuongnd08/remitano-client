@@ -18,10 +18,10 @@ module Remitano
   end
 
   class Net
-    attr_reader :remitano
+    attr_reader :config
 
-    def initialize(remitano: nil)
-      @remitano = remitano || Remitano.singleton
+    def initialize(config:)
+      @config = config
     end
 
     def self.to_uri(path)
@@ -68,7 +68,7 @@ module Remitano
     end
 
     def new_request(method, path, params={})
-      p [:new_request, method, path] if remitano.verbose
+      p [:new_request, method, path] if config.verbose
 
       options = {
         :method => method,
@@ -91,7 +91,7 @@ module Remitano
 
     def sign_request(req)
       req.headers['Content-Type'] = 'application/json'
-      ApiAuth.sign!(req, remitano.key, remitano.secret)
+      ApiAuth.sign!(req, config.key, config.secret)
       Remitano::Request.new(req)
     end
   end

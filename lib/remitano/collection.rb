@@ -3,27 +3,27 @@ module Remitano
     attr_accessor :path, :resource_name
     attr_accessor :remitano
 
-    def initialize(remitano: nil)
-      @remitano = remitano || Remitano.singleton
+    def initialize(config:)
+      @config = config || Remitano.default_config
       name = self.class.name.underscore.split("/").last
       self.resource_name = name.singularize
       self.path = "/#{name}"
     end
 
     def all
-      remitano.net.new(remitano: remitano).get(self.path).execute
+      config.net.new(config: config).get(self.path).execute
     end
 
     def create(params = {})
-      remitano.net.new(remitano: remitano).post(self.path, { self.resource_name => params }).execute
+      config.net.new(config: config).post(self.path, { self.resource_name => params }).execute
     end
 
     def get(id)
-      remitano.net.new(remitano: remitano).get("#{self.path}/#{id}").execute
+      config.net.new(config: config).get("#{self.path}/#{id}").execute
     end
 
     def update(id, params = {})
-      remitano.net.new(remitano: remitano).patch("#{self.path}/#{id}", { self.resource_name => params }).execute
+      config.net.new(config: config).patch("#{self.path}/#{id}", { self.resource_name => params }).execute
     end
   end
 end

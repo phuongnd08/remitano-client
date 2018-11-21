@@ -2,14 +2,14 @@ require_relative "collection"
 
 module Remitano
   class ActionConfirmations < Remitano::Collection
-    attr_accessor :remitano
+    attr_accessor :config
 
-    def initialize(remitano: remitano)
-      @remitano = remitano || Remitano.singleton
+    def initialize(config:)
+      @config = config
     end
 
     def confirm!(id)
-      remitano.net.post("/action_confirmations/#{id}/confirm", token: remitano.authenticator_token).execute
+      config.net.post("/action_confirmations/#{id}/confirm", token: config.authenticator_token).execute
     end
 
     def confirm_if_neccessary!(response)
