@@ -40,6 +40,11 @@ module Remitano
       @action_confirmations ||= Remitano::ActionConfirmations.new(remitano: self)
     end
 
+    def coin_accounts(coin)
+      @coin_accounts ||= {}
+      @coin_accounts[coin] ||= Remitano::CoinAccounts.new(coin, remitano: self)
+    end
+
     def configure
       yield self
     end

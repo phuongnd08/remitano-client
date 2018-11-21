@@ -24,15 +24,15 @@ module Remitano
       @remitano = remitano || Remitano.singleton
     end
 
-    def to_uri(path)
+    def self.to_uri(path)
       return "#{server}/api/v1#{path}"
     end
 
-    def server
+    def self.server
       @server ||= (ENV['REMITANO_SERVER'] || "https://remitano.com")
     end
 
-    def public_get(path, params = {})
+    def self.public_get(path, params = {})
       options = {
         :url => self.to_uri(path),
         :method => :get,
@@ -84,7 +84,7 @@ module Remitano
         options[:payload] = params.to_json
       end
 
-      options[:url] = to_uri(path)
+      options[:url] = Remitano::Net.to_uri(path)
 
       RestClient::Request.new(options)
     end
