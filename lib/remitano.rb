@@ -42,6 +42,24 @@ module Remitano
       @coin_accounts[coin] ||= Remitano::CoinAccounts.new(coin, config: self)
     end
 
+    def offers(coin)
+      @offers ||= {}
+      @offers[coin] ||= Remitano::Offers.new(coin, config: self)
+    end
+
+    def trades(coin)
+      @trades ||= {}
+      @trades[coin] ||= Remitano::Trades.new(coin, config: self)
+    end
+
+    def coin_withdrawals(coin)
+      @coin_withdrawals ||= Remitano::CoinWithdrawals.new(coin, config: self)
+    end
+
+    def orders
+      @orders ||= Remitano::Orders.new(config: self)
+    end
+
     def configure
       yield self
     end

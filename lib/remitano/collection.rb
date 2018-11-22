@@ -1,10 +1,10 @@
 module Remitano
   class Collection
     attr_accessor :path, :resource_name
-    attr_accessor :remitano
+    attr_accessor :config
 
     def initialize(config:)
-      @config = config || Remitano.default_config
+      @config = config
       name = self.class.name.underscore.split("/").last
       self.resource_name = name.singularize
       self.path = "/#{name}"
