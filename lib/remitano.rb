@@ -62,6 +62,7 @@ module Remitano
 
     def configure
       yield self
+      self
     end
   end
 end
