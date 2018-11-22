@@ -13,7 +13,7 @@ Remitano.secret = ENV["REMITANO_SECRET"]
 class RemitanoCLI < Thor
   desc "fetch-balance COIN", "Fetch your COIN balance"
   def fetch_balance(coin)
-    puts "#{coin.upcase} balance: #{Remitano::CoinAccounts.of_coin(coin).me.main.available_balance}"
+    puts "#{coin.upcase} balance: #{Remitano.default_config.coin_accounts(coin).me.main.available_balance}"
   end
 end
 
