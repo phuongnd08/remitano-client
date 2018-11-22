@@ -2,6 +2,8 @@ require 'api-auth'
 
 module Remitano
   class Request
+    class RequestError < StandardError; end
+
     def initialize(request)
       @request = request
     end
@@ -11,7 +13,7 @@ module Remitano
         if result.code =~ /^2\d\d$/
           return Remitano::Helper.parse_json(res)
         else
-          raise "Error #{result.code} #{res}"
+          raise RequestError.new("Error #{result.code} #{res}")
         end
       end
     end
