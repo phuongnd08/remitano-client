@@ -13,21 +13,55 @@ String.send(:include, ActiveSupport::Inflector)
 module Remitano
   class AuthenticatorNotConfigured < StandardError; end
 
-  # API Key
-  mattr_accessor :key
-
-  # Remitano secret
-  mattr_accessor :secret
-
-  mattr_accessor :authenticator_secret
-
-  mattr_accessor :verbose
-
-  def self.authenticator_token
-    ROTP::TOTP.new(authenticator_secret).now
+  def self.default_config
+    @default_config ||= Remitano::Config.new
   end
 
-  def self.configure
-    yield self
+  class Config
+    # API Key
+    attr_accessor :key
+    # Remitano secret
+    attr_accessor :secret
+    attr_accessor :authenticator_secret
+    attr_accessor :verbose
+
+    def authenticator_token
+      ROTP::TOTP.new(authenticator_secret).now
+    end
+
+    def net
+      @net ||= Remitano::Net.new(config: self)
+    end
+
+    def action_confirmations
+      @action_confirmations ||= Remitano::ActionConfirmations.new(config: self)
+    end
+
+    def coin_accounts(coin)
+      @coin_accounts ||= {}
+      @coin_accounts[coin] ||= Remitano::CoinAccounts.new(coin, config: self)
+    end
+
+    def offers(coin)
+      @offers ||= {}
+      @offers[coin] ||= Remitano::Offers.new(coin, config: self)
+    end
+
+    def trades(coin)
+      @trades ||= {}
+      @trades[coin] ||= Remitano::Trades.new(coin, config: self)
+    end
+
+    def coin_withdrawals(coin)
+      @coin_withdrawals ||= Remitano::CoinWithdrawals.new(coin, config: self)
+    end
+
+    def orders
+      @orders ||= Remitano::Orders.new(config: self)
+    end
+
+    def configure
+      yield self
+    end
   end
 end

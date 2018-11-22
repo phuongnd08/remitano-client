@@ -1,9 +1,7 @@
 require 'api-auth'
 
 module Remitano
-  class Net
-    attr_reader :request
-
+  class Request
     def initialize(request)
       @request = request
     end
@@ -16,6 +14,14 @@ module Remitano
           raise "Error #{result.code} #{res}"
         end
       end
+    end
+  end
+
+  class Net
+    attr_reader :config
+
+    def initialize(config:)
+      @config = config
     end
 
     def self.to_uri(path)
@@ -38,31 +44,31 @@ module Remitano
       }
       req = RestClient::Request.new(options)
       req.headers['Content-Type'] = 'application/json'
-      new(req)
+      Remitano::Request.new(req)
     end
 
-    def self.get(path, params={})
+    def get(path, params={})
       request = new_request(:get, path, params)
       sign_request(request)
     end
 
-    def self.post(path, params={})
+    def post(path, params={})
       request = new_request(:post, path, params)
       sign_request(request)
     end
 
-    def self.patch(path, params={})
+    def patch(path, params={})
       request = new_request(:put, path, params)
       sign_request(request)
     end
 
-    def self.delete(path, params={})
+    def delete(path, params={})
       request = new_request(:delete, path, params)
       sign_request(request)
     end
 
-    def self.new_request(method, path, params={})
-      p [:new_request, method, path] if Remitano.verbose
+    def new_request(method, path, params={})
+      p [:new_request, method, path] if config.verbose
 
       options = {
         :method => method,
@@ -78,15 +84,15 @@ module Remitano
         options[:payload] = params.to_json
       end
 
-      options[:url] = to_uri(path)
+      options[:url] = Remitano::Net.to_uri(path)
 
       RestClient::Request.new(options)
     end
 
-    def self.sign_request(req)
+    def sign_request(req)
       req.headers['Content-Type'] = 'application/json'
-      ApiAuth.sign!(req, Remitano.key, Remitano.secret)
-      new(req)
+      ApiAuth.sign!(req, config.key, config.secret)
+      Remitano::Request.new(req)
     end
   end
 end

@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: REMITANO_SERVER/api/v1/coin_accounts/me?coin_currency=btc&usec=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin17.7.0 x86_64) ruby/2.4.3p205
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 21 Nov 2018 13:24:53 GMT
+      Authorization:
+      - APIAuth REMITANO_KEY:/SEOuuPtoVTm2q1FTGvMC4ET/YA=
+      Host:
+      - localhost:3100
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '386'
+      Etag:
+      - W/"c4d85a5c69e1f0d8d7b1249c29eeb3c5"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 41137da5-61c4-4edd-8eca-48d273317e4a
+      X-Runtime:
+      - '0.514458'
+      Vary:
+      - Origin
+      Connection:
+      - keep-alive
+      Server:
+      - thin
+    body:
+      encoding: UTF-8
+      string: '{"main":{"id":45,"address":"1NHy9krGCkkyNswx4Zu1MzxKRmnJ7j8W7c","balance":12.0,"frozen_balance":0.0,"available_balance":0.0,"available_withdrawable_balance":0,"coin_currency":"btc"},"deposit":{"id":339609,"address":null,"balance":0.0,"frozen_balance":0.0,"available_balance":0.0,"available_withdrawable_balance":0,"coin_currency":"btc"},"coin_address_channel":"coin_address_channel_45"}'
+    http_version: 
+  recorded_at: Wed, 21 Nov 2018 13:24:53 GMT
+recorded_with: VCR 4.0.0

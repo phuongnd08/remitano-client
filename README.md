@@ -15,10 +15,18 @@ Visit [Settings](https://remitano.com/settings), Api section to create API key
 ## Setup
 
 ```ruby
-Remitano.configure do |config|
+Remitano.default_config.configure do |config|
   config.key = YOUR_API_KEY
   config.secret = YOUR_API_SECRET
 end
+```
+or
+```ruby
+config = Remitano.default_config.configure do |config|
+  config.key = YOUR_API_KEY
+  config.secret = YOUR_API_SECRET
+end
+
 ```
 
 ## Remitano BTC exchange ticker

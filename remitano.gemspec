@@ -6,7 +6,7 @@
 
 Gem::Specification.new do |spec|
   spec.name = "remitano"
-  spec.version = "0.0.1"
+  spec.version = "0.0.2"
 
   spec.authors = ["Phuong Nguyen"]
   spec.description = "Ruby API for use with remitano."

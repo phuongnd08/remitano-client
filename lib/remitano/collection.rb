@@ -1,27 +1,29 @@
 module Remitano
   class Collection
     attr_accessor :path, :resource_name
+    attr_accessor :config
 
-    def initialize
+    def initialize(config:)
+      @config = config
       name = self.class.name.underscore.split("/").last
       self.resource_name = name.singularize
       self.path = "/#{name}"
     end
 
     def all
-      Remitano::Net::get(self.path).execute
+      config.net.new(config: config).get(self.path).execute
     end
 
     def create(params = {})
-      Remitano::Net::post(self.path, { self.resource_name => params }).execute
+      config.net.new(config: config).post(self.path, { self.resource_name => params }).execute
     end
 
     def get(id)
-      Remitano::Net::get("#{self.path}/#{id}").execute
+      config.net.new(config: config).get("#{self.path}/#{id}").execute
     end
 
     def update(id, params = {})
-      Remitano::Net::patch("#{self.path}/#{id}", { self.resource_name => params }).execute
+      config.net.new(config: config).patch("#{self.path}/#{id}", { self.resource_name => params }).execute
     end
   end
 end
