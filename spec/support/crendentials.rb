@@ -5,10 +5,8 @@ ENV["REMITANO_SERVER"] = "http://localhost:3100"
 
 RSpec.configure do |config|
   config.before(:each) do
-    Remitano.default_config.configure do |config|
-      config.key = ENV['REMITANO_KEY']
-      config.secret = ENV['REMITANO_SECRET']
-      config.authenticator_secret = ENV['REMITANO_AUTHENTICATOR_SECRET']
-    end
+    Remitano::Client.default_key = ENV['REMITANO_KEY']
+    Remitano::Client.default_secret = ENV['REMITANO_SECRET']
+    Remitano::Client.default_authenticator_secret = ENV['REMITANO_SECRET']
   end
 end

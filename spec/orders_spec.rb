@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Remitano::Orders do
+describe "Remitano::Client#orders" do
   describe :open, vcr: {cassette_name: 'remitano/orders/open'} do
-    subject { Remitano.default_config.orders.open("btcusdt", page: 1) }
+    subject { Remitano::Client.default.orders.open("btcusdt", page: 1) }
     it "returns list of orders" do
       expect(subject["orders"].count).to eq 4
       expect(subject["orders"].first["status"]).to eq "open"
@@ -12,7 +12,7 @@ describe Remitano::Orders do
 
   describe :create, vcr: {cassette_name: 'remitano/orders/create'} do
     it "create the order" do
-      order = Remitano.default_config.orders.create(
+      order = Remitano::Client.default.orders.create(
         pair: "btcusdt", side: "sell",
         price: "10000", amount: 0.001
       )
@@ -22,7 +22,7 @@ describe Remitano::Orders do
 
   describe :cancel, vcr: {cassette_name: 'remitano/orders/cancel'} do
     it "cancel the order" do
-      order = Remitano.default_config.orders.cancel(27)
+      order = Remitano::Client.default.orders.cancel(27)
       expect(order["status"]).to eq "cancelled"
     end
   end

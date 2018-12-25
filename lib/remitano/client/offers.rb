@@ -1,6 +1,6 @@
 require_relative "coin_collection"
 module Remitano
-  class Offers < Remitano::CoinCollection
+  class Client::Offers < Client::CoinCollection
     def my_offers(side)
       config.net.get("/offers/my_offers?offer_type=#{side}&coin_currency=#{coin}").execute.offers
     end

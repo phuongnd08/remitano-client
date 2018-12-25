@@ -15,26 +15,19 @@ Visit [Settings](https://remitano.com/settings), Api section to create API key
 ## Setup
 
 ```ruby
-Remitano.default_config.configure do |config|
-  config.key = YOUR_API_KEY
-  config.secret = YOUR_API_SECRET
-end
+Remitano::Client.default_key = YOUR_API_KEY
+Remitano::Client.default_secret = YOUR_API_SECRET
+Remitano::Client.default_authenticator_secret = YOUR_AUTHY_AUTHENTICATION_SECRET
+Remitano::Client.default # => the default client
 ```
 or
 ```ruby
-config = Remitano.default_config.configure do |config|
-  config.key = YOUR_API_KEY
-  config.secret = YOUR_API_SECRET
-end
+client = new Remitano::Client(
+  key: YOUR_API_KEY,
+  secret: YOUR_API_SECRET,
+  authenticator_secret: YOUR_AUTHY_AUTHENTICATION_SECRET,
+)
 
-```
-
-## Remitano BTC exchange ticker
-
-Returns `market_bid`, `market_ask`, `last_price`
-
-```ruby
-Remitano.ticker
 ```
 
 ## Fetch your live order
@@ -42,15 +35,7 @@ Remitano.ticker
 Returns an array with your open orders.
 
 ```ruby
-Remitano.orders.live
-```
-
-## Fetch your live orders
-
-Returns an array with your live orders.
-
-```ruby
-Remitano.orders.live
+client.orders.live
 ```
 
 ## Fetch your filled orders
@@ -58,28 +43,14 @@ Remitano.orders.live
 Returns an array with your filled orders.
 
 ```ruby
-Remitano.orders.filled
+client.orders.filled
 ```
 
 ## Create a buy order
 
 ```ruby
-Remitano.orders.create(side: "buy", order_type: "limit", amount: 1.0, price: 260)
+client.orders.create(pair: "btcusdt", side: "buy", amount: 1.0, price: 1000)
 
-```
-## Get executions of an order
-
-```ruby
-Remitano.executions.all(order_id: 1)
-```
-
-# Tests
-
-If you'd like to run the tests you need to set the following environment variables:
-
-```
-export REMITANO_KEY=xxx
-export REMITANO_SECRET=yyy
 ```
 
 ## Contributing

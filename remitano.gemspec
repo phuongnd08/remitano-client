@@ -3,10 +3,13 @@
 # Instead, edit Jeweler::Tasks in Rakefile, and run 'rake gemspec'
 # -*- encoding: utf-8 -*-
 # stub: remitano 0.4.0 ruby lib
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require "remitano/version"
 
 Gem::Specification.new do |spec|
   spec.name = "remitano"
-  spec.version = "0.0.2"
+  spec.version = Remitano::VERSION
 
   spec.authors = ["Phuong Nguyen"]
   spec.description = "Ruby API for use with remitano."

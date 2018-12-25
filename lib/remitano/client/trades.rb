@@ -1,6 +1,6 @@
 require_relative "coin_collection"
 module Remitano
-  class Trades < Remitano::CoinCollection
+  class Client::Trades < Client::CoinCollection
     def active(buy_or_sell, page: nil)
       options = { trade_type: buy_or_sell, trade_status: "active", coin_currency: coin }
       (options[:page] = page) if page

@@ -1,7 +1,7 @@
 require_relative "collection"
 
 module Remitano
-  class CoinCollection < Collection
+  class Client::CoinCollection < Client::Collection
     attr_reader :config, :coin
 
     def initialize(coin, config:)

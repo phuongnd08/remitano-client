@@ -1,5 +1,5 @@
 module Remitano
-  class Collection
+  class Client::Collection
     attr_accessor :path, :resource_name
     attr_accessor :config
 

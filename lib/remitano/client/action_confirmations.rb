@@ -1,7 +1,7 @@
 require_relative "collection"
 
 module Remitano
-  class ActionConfirmations < Remitano::Collection
+  class Client::ActionConfirmations < Client::Collection
     attr_accessor :config
 
     def initialize(config:)

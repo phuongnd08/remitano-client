@@ -1,7 +1,7 @@
 require 'api-auth'
 
 module Remitano
-  class Request
+  class Client::Request
     class RequestError < StandardError; end
 
     def initialize(request)
@@ -11,7 +11,7 @@ module Remitano
     def execute
       @request.execute do |res, req, result|
         if result.code =~ /^2\d\d$/
-          return Remitano::Helper.parse_json(res)
+          return Remitano::Client::Helper.parse_json(res)
         else
           raise RequestError.new("Error #{result.code} #{res}")
         end
@@ -19,7 +19,7 @@ module Remitano
     end
   end
 
-  class Net
+  class Client::Net
     attr_reader :config
 
     def initialize(config:)
@@ -46,7 +46,7 @@ module Remitano
       }
       req = RestClient::Request.new(options)
       req.headers['Content-Type'] = 'application/json'
-      Remitano::Request.new(req)
+      Remitano::Client::Request.new(req)
     end
 
     def get(path, params={})
@@ -86,7 +86,7 @@ module Remitano
         options[:payload] = params.to_json
       end
 
-      options[:url] = Remitano::Net.to_uri(path)
+      options[:url] = self.class.to_uri(path)
 
       RestClient::Request.new(options)
     end
@@ -94,7 +94,7 @@ module Remitano
     def sign_request(req)
       req.headers['Content-Type'] = 'application/json'
       ApiAuth.sign!(req, config.key, config.secret)
-      Remitano::Request.new(req)
+      Remitano::Client::Request.new(req)
     end
   end
 end

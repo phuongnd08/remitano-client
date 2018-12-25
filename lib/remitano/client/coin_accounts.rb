@@ -1,7 +1,7 @@
 require_relative "coin_collection"
 
 module Remitano
-  class CoinAccounts < Remitano::CoinCollection
+  class Client::CoinAccounts < Client::CoinCollection
     def me
       config.net.get("/coin_accounts/me?coin_currency=#{coin}").execute
     end

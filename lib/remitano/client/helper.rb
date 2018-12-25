@@ -1,5 +1,5 @@
 module Remitano
-  module Helper
+  module Client::Helper
     def self.parse_json(str)
       json = JSON.parse(str)
       if json.is_a? Array
