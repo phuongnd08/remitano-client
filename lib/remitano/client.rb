@@ -43,6 +43,11 @@ module Remitano
       @coin_accounts[coin] ||= CoinAccounts.new(coin, config: self)
     end
 
+    def fiat_accounts(currency)
+      @fiat_accounts ||= {}
+      @fiat_accounts[currency] ||= FiatAccounts.new(currency, config: self)
+    end
+
     def offers(coin)
       @offers ||= {}
       @offers[coin] ||= Offers.new(coin, config: self)
