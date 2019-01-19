@@ -19,7 +19,7 @@ module Remitano
 
     attr_accessor :key, :secret, :authenticator_secret, :verbose
 
-    def initialize(key:, secret:, authenticator_secret:, verbose: false)
+    def initialize(key:, secret:, authenticator_secret: nil, verbose: false)
       self.key = key
       self.secret = secret
       self.authenticator_secret = authenticator_secret
