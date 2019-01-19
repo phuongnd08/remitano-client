@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: REMITANO_SERVER/api/v1/btc_rates/fetch
+    uri: REMITANO_SERVER/api/v1/rates/ads
     body:
       encoding: US-ASCII
       string: ''

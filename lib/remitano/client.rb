@@ -66,8 +66,8 @@ module Remitano
       @orders ||= Orders.new(config: self)
     end
 
-    def coin_rates
-      @coin_rates ||= CoinRates.new
+    def rates
+      @rates ||= Rates.new
     end
 
     def public_offers(coin)
