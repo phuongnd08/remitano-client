@@ -31,7 +31,7 @@ module Remitano
     end
 
     def self.server
-      @server ||= (ENV['REMITANO_SERVER'] || "https://remitano.com")
+      @server ||= (ENV['REMITANO_SERVER'] || "https://api.remitano.com")
     end
 
     def self.public_get(path, params = {})
