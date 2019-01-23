@@ -10,11 +10,12 @@ module Remitano
       config.net.post("/coin_withdrawals/#{id}/cancel").execute
     end
 
-    def withdraw(coin_address, coin_amount)
+    def withdraw(coin_address:, coin_amount:, destination_tag: nil)
       params = {
         coin_address: coin_address,
         coin_currency: coin,
-        coin_amount: coin_amount
+        coin_amount: coin_amount,
+        destination_tag: destination_tag,
       }
       response = config.net.post("/coin_withdrawals", coin_withdrawal: params).execute
       config.action_confirmations.confirm_if_neccessary!(response)
