@@ -78,6 +78,10 @@ module Remitano
     def price_ladders
       @price_ladders ||= PriceLadders.new
     end
+
+    def merchant_charges
+      @merchant_charges ||= MerchantCharges.new(config: self)
+    end
   end
 end
 
