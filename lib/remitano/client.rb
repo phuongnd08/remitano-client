@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'active_support'
 require 'active_support/core_ext'
 require 'active_support/inflector'
@@ -28,6 +30,10 @@ module Remitano
 
     def authenticator_token
       ROTP::TOTP.new(authenticator_secret).now
+    end
+
+    def hotp(otp_counter)
+      ROTP::HOTP.new(authenticator_secret).at(otp_counter)
     end
 
     def net
@@ -77,6 +83,14 @@ module Remitano
 
     def price_ladders
       @price_ladders ||= PriceLadders.new
+    end
+
+    def merchant_charges
+      @merchant_charges ||= MerchantCharges.new(config: self)
+    end
+
+    def merchant_withdrawals
+      @merchant_withdrawals ||= MerchantWithdrawals.new(config: self)
     end
   end
 end

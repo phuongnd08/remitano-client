@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: REMITANO_SERVER/api/v1/merchant/merchant_deposit_requests
+    body:
+      encoding: UTF-8
+      string: '{"coin_currency":"usdt","coin_amount":10.99,"cancelled_or_completed_callback_url":"http://sample.com/123/callback","usec":0}'
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin18.6.0 x86_64) ruby/2.4.3p205
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 20 May 2021 07:56:16 GMT
+      Authorization:
+      - APIAuth REMITANO_KEY:0pdHyvw02icAuAn3g/zRfu3J2Po=
+      Content-Length:
+      - '124'
+      Host:
+      - localhost:3100
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"0ece713edd013b8fab04d54b911fc1bb"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _admin_session=47d8924b33b14bf08df29e7d044352a0; path=/; expires=Sun, 20 Jun
+        2021 07:56:17 -0000; HttpOnly; SameSite=Lax
+      X-Request-Id:
+      - a73a5639-b76a-48fa-9e1a-e964ee60bad4
+      X-Runtime:
+      - '0.417483'
+      Vary:
+      - Origin
+      Content-Length:
+      - '250'
+    body:
+      encoding: UTF-8
+      string: '{"id":22,"coin_currency":"usdt","coin_amount":10.99,"status":"pending","cancelled_or_completed_callback_url":"http://sample.com/123/callback","remitano_payment_url":"localhost:3200/payment_gateway/pay/MDR5588788611","created_at_timestamp":1621497377}'
+    http_version:
+  recorded_at: Thu, 20 May 2021 07:56:17 GMT
+recorded_with: VCR 4.0.0

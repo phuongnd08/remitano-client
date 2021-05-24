@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: REMITANO_SERVER/api/v1/merchant/merchant_withdrawal_requests/1?usec=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin18.6.0 x86_64) ruby/2.4.3p205
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 23 May 2021 16:05:13 GMT
+      Authorization:
+      - APIAuth REMITANO_KEY:a3RSQXo+aJaUEGzIYuwPmFD0Uy0=
+      Host:
+      - localhost:3100
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"0cd3051b89e28c52971b774e340b5e9b"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3c26b300-ef46-499d-9d31-00e38e5663e2
+      X-Runtime:
+      - '0.308814'
+      Vary:
+      - Origin
+      Content-Length:
+      - '417'
+    body:
+      encoding: UTF-8
+      string: '{"id":1,"merchant_withdrawal_ref":"mwr2","status":"cancelled","coin_amount":100.0,"coin_currency":"usdt","coin_fee":0.0,"receiver_pay_fee":null,"action_confirmation_id":null,"otp_counter":null,"coin_address":"3BDS42pbFgxDn9uMSCBiWE5BcWFBVPPCAA","destination_tag":null,"remitano_username":null,"remitano_phone_number":null,"cancelled_or_completed_callback_url":"http://dummy.com/111","created_at_timestamp":1621401962}'
+    http_version:
+  recorded_at: Sun, 23 May 2021 16:05:14 GMT
+recorded_with: VCR 4.0.0

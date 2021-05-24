@@ -1,0 +1,296 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: REMITANO_SERVER/api/v1/action_confirmations/29/confirm
+    body:
+      encoding: UTF-8
+      string: '{"token":"285110","usec":0}'
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin18.6.0 x86_64) ruby/2.4.3p205
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 20 May 2021 08:01:18 GMT
+      Authorization:
+      - APIAuth REMITANO_KEY:LHkinTzn0ceTUjLAqHUZsiLu3rY=
+      Content-Length:
+      - '27'
+      Host:
+      - localhost:3100
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"6a24ce0fec82f4d0ee8c21aaf6c4044e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _admin_session=f3a58b419052144976e1cf0ecbadf788; path=/; expires=Sun, 20 Jun
+        2021 08:01:24 -0000; HttpOnly; SameSite=Lax
+      X-Request-Id:
+      - 114f7ae8-3bbd-43d4-a4bc-ec5305fe0369
+      X-Runtime:
+      - '4.102672'
+      Vary:
+      - Origin
+      Content-Length:
+      - '641'
+    body:
+      encoding: UTF-8
+      string: '{"id":29,"status":"confirmed","actionable_type":"MerchantWithdrawalRequest","action":"confirm_by_action_confirmation!","via":"authenticator","status_explanation":"confirmed
+        with token 285110","actionable_id":14,"message":null,"is_action_confirmation":true,"actionable":{"id":14,"merchant_withdrawal_ref":"akh9r1h29e14","status":"processing","coin_amount":10.99,"coin_currency":"xrp","coin_fee":2.0e-05,"receiver_pay_fee":true,"action_confirmation_id":29,"otp_counter":29,"coin_address":"rLpumSZQNJ6Cve7hfQcdkG9rJbJhkSV8AD","destination_tag":1710676231,"remitano_username":null,"remitano_phone_number":null,"created_at_timestamp":1621497678}}'
+    http_version:
+  recorded_at: Thu, 20 May 2021 08:01:24 GMT
+- request:
+    method: post
+    uri: REMITANO_SERVER/api/v1/action_confirmations/31/confirm
+    body:
+      encoding: UTF-8
+      string: '{"token":"369819","usec":0}'
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin18.6.0 x86_64) ruby/2.4.3p205
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 23 May 2021 16:09:38 GMT
+      Authorization:
+      - APIAuth REMITANO_KEY:2M2bnlLPomohSx9cRR1MwvLFunI=
+      Content-Length:
+      - '27'
+      Host:
+      - localhost:3100
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"7494711ee91011552574178edcf0f3a8"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _admin_session=9006016efaeeb2bd94a628a3777bf499; path=/; expires=Wed, 23 Jun
+        2021 16:09:38 -0000; HttpOnly; SameSite=Lax
+      X-Request-Id:
+      - 6f811443-6a0b-4b86-becb-be016d520dd8
+      X-Runtime:
+      - '0.433159'
+      Vary:
+      - Origin
+      Content-Length:
+      - '716'
+    body:
+      encoding: UTF-8
+      string: '{"id":31,"status":"confirmed","actionable_type":"MerchantWithdrawalRequest","action":"confirm_by_action_confirmation!","via":"authenticator","status_explanation":"confirmed
+        with token 369819","actionable_id":15,"message":null,"is_action_confirmation":true,"actionable":{"id":15,"merchant_withdrawal_ref":"akh9r1h29e15","status":"processing","coin_amount":10.99,"coin_currency":"xrp","coin_fee":2.0e-05,"receiver_pay_fee":true,"action_confirmation_id":null,"otp_counter":null,"coin_address":"rLpumSZQNJ6Cve7hfQcdkG9rJbJhkSV8AD","destination_tag":1710676231,"remitano_username":null,"remitano_phone_number":null,"cancelled_or_completed_callback_url":"http://sample.com/123/callback","created_at_timestamp":1621786177}}'
+    http_version:
+  recorded_at: Sun, 23 May 2021 16:09:38 GMT
+- request:
+    method: get
+    uri: REMITANO_SERVER/api/v1/merchant/merchant_withdrawal_requests/15?usec=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin18.6.0 x86_64) ruby/2.4.3p205
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 23 May 2021 16:09:38 GMT
+      Authorization:
+      - APIAuth REMITANO_KEY:tjSFfVrjAcrt2R9jUBjWNYL+OR8=
+      Host:
+      - localhost:3100
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"ff471cd0aefd9753aa2f75eb19340b7e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 945da3d6-5fd4-4232-8ee8-3a1bcbc47e4b
+      X-Runtime:
+      - '0.044942'
+      Vary:
+      - Origin
+      Content-Length:
+      - '446'
+    body:
+      encoding: UTF-8
+      string: '{"id":15,"merchant_withdrawal_ref":"akh9r1h29e15","status":"processing","coin_amount":10.99,"coin_currency":"xrp","coin_fee":2.0e-05,"receiver_pay_fee":true,"action_confirmation_id":null,"otp_counter":null,"coin_address":"rLpumSZQNJ6Cve7hfQcdkG9rJbJhkSV8AD","destination_tag":1710676231,"remitano_username":null,"remitano_phone_number":null,"cancelled_or_completed_callback_url":"http://sample.com/123/callback","created_at_timestamp":1621786177}'
+    http_version:
+  recorded_at: Sun, 23 May 2021 16:09:38 GMT
+- request:
+    method: post
+    uri: REMITANO_SERVER/api/v1/merchant/merchant_withdrawal_requests
+    body:
+      encoding: UTF-8
+      string: '{"merchant_withdrawal_ref":"akh9r1h29e16","coin_currency":"xrp","coin_amount":10.99,"receiver_pay_fee":true,"cancelled_or_completed_callback_url":"http://sample.com/123/callback","coin_address":"rLpumSZQNJ6Cve7hfQcdkG9rJbJhkSV8AD","destination_tag":1710676231,"remitano_username":null,"remitano_phone_number":null,"usec":0}'
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin18.6.0 x86_64) ruby/2.4.3p205
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 23 May 2021 16:10:47 GMT
+      Authorization:
+      - APIAuth REMITANO_KEY:HIvYgAFYXmeK+6kaWoh9pQ7WdaE=
+      Content-Length:
+      - '323'
+      Host:
+      - localhost:3100
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"818b20dc738c03f9a2b511ac67ee5830"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _admin_session=dd3bddc010fec8cd345130e8fd80d4b3; path=/; expires=Wed, 23 Jun
+        2021 16:10:47 -0000; HttpOnly; SameSite=Lax
+      X-Request-Id:
+      - 3926dce7-2911-498e-920b-1ea443011a7e
+      X-Runtime:
+      - '0.085248'
+      Vary:
+      - Origin
+      Content-Length:
+      - '439'
+    body:
+      encoding: UTF-8
+      string: '{"id":16,"merchant_withdrawal_ref":"akh9r1h29e16","status":"pending","coin_amount":10.99,"coin_currency":"xrp","coin_fee":2.0e-05,"receiver_pay_fee":true,"action_confirmation_id":32,"otp_counter":32,"coin_address":"rLpumSZQNJ6Cve7hfQcdkG9rJbJhkSV8AD","destination_tag":1710676231,"remitano_username":null,"remitano_phone_number":null,"cancelled_or_completed_callback_url":"http://sample.com/123/callback","created_at_timestamp":1621786247}'
+    http_version:
+  recorded_at: Sun, 23 May 2021 16:10:47 GMT
+- request:
+    method: post
+    uri: REMITANO_SERVER/api/v1/action_confirmations/32/confirm
+    body:
+      encoding: UTF-8
+      string: '{"token":"708369","usec":0}'
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin18.6.0 x86_64) ruby/2.4.3p205
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 23 May 2021 16:10:47 GMT
+      Authorization:
+      - APIAuth REMITANO_KEY:bMyPkFYFveTruxiL6A2cNcJlzc8=
+      Content-Length:
+      - '27'
+      Host:
+      - localhost:3100
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"bbe5dc797e300af424590d51cd869bc8"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _admin_session=03358fc09fb1001abd185d9104834ba1; path=/; expires=Wed, 23 Jun
+        2021 16:10:48 -0000; HttpOnly; SameSite=Lax
+      X-Request-Id:
+      - 217c90ec-d95a-4708-ac5f-9d7b7f11f3bb
+      X-Runtime:
+      - '0.269033'
+      Vary:
+      - Origin
+      Content-Length:
+      - '716'
+    body:
+      encoding: UTF-8
+      string: '{"id":32,"status":"confirmed","actionable_type":"MerchantWithdrawalRequest","action":"confirm_by_action_confirmation!","via":"authenticator","status_explanation":"confirmed
+        with token 708369","actionable_id":16,"message":null,"is_action_confirmation":true,"actionable":{"id":16,"merchant_withdrawal_ref":"akh9r1h29e16","status":"processing","coin_amount":10.99,"coin_currency":"xrp","coin_fee":2.0e-05,"receiver_pay_fee":true,"action_confirmation_id":null,"otp_counter":null,"coin_address":"rLpumSZQNJ6Cve7hfQcdkG9rJbJhkSV8AD","destination_tag":1710676231,"remitano_username":null,"remitano_phone_number":null,"cancelled_or_completed_callback_url":"http://sample.com/123/callback","created_at_timestamp":1621786247}}'
+    http_version:
+  recorded_at: Sun, 23 May 2021 16:10:48 GMT
+- request:
+    method: get
+    uri: REMITANO_SERVER/api/v1/merchant/merchant_withdrawal_requests/16?usec=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin18.6.0 x86_64) ruby/2.4.3p205
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 23 May 2021 16:10:48 GMT
+      Authorization:
+      - APIAuth REMITANO_KEY:qE7lX+PE++UOuFs8X2QMLGj2Jes=
+      Host:
+      - localhost:3100
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"e83a7b5627553a6cf7feef822f47daf0"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5ae8c872-d175-480f-9278-ddb336c5de7f
+      X-Runtime:
+      - '0.049461'
+      Vary:
+      - Origin
+      Content-Length:
+      - '446'
+    body:
+      encoding: UTF-8
+      string: '{"id":16,"merchant_withdrawal_ref":"akh9r1h29e16","status":"processing","coin_amount":10.99,"coin_currency":"xrp","coin_fee":2.0e-05,"receiver_pay_fee":true,"action_confirmation_id":null,"otp_counter":null,"coin_address":"rLpumSZQNJ6Cve7hfQcdkG9rJbJhkSV8AD","destination_tag":1710676231,"remitano_username":null,"remitano_phone_number":null,"cancelled_or_completed_callback_url":"http://sample.com/123/callback","created_at_timestamp":1621786247}'
+    http_version:
+  recorded_at: Sun, 23 May 2021 16:10:48 GMT
+recorded_with: VCR 4.0.0

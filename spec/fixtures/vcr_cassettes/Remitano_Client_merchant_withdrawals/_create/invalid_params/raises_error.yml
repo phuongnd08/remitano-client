@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: REMITANO_SERVER/api/v1/merchant/merchant_withdrawal_requests
+    body:
+      encoding: UTF-8
+      string: '{"merchant_withdrawal_ref":"akh9r1h29e1","coin_currency":"xrp","coin_amount":10.99,"receiver_pay_fee":true,"cancelled_or_completed_callback_url":"http://sample.com/123/callback","coin_address":"rLpumSZQNJ6Cve7hfQcdkG9rJbJhkSV8AD0","destination_tag":1710676231,"remitano_username":null,"remitano_phone_number":null,"usec":0}'
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin18.6.0 x86_64) ruby/2.4.3p205
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 20 May 2021 07:56:18 GMT
+      Authorization:
+      - APIAuth REMITANO_KEY:Bw+Lsf952767vNETwDo+fr6J1Kw=
+      Content-Length:
+      - '323'
+      Host:
+      - localhost:3100
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Content-Type:
+      - application/json
+      Cache-Control:
+      - no-cache
+      Set-Cookie:
+      - _admin_session=85fbf03fd2cd242576e342c9e4ffeeeb; path=/; expires=Sun, 20 Jun
+        2021 07:56:18 -0000; HttpOnly; SameSite=Lax
+      X-Request-Id:
+      - ec49ca03-519d-46c4-9b7d-4baaec83fe91
+      X-Runtime:
+      - '0.172929'
+      Vary:
+      - Origin
+      Content-Length:
+      - '83'
+    body:
+      encoding: UTF-8
+      string: '{"error":"Merchant withdrawal ref has already been taken, Coin address
+        is invalid"}'
+    http_version:
+  recorded_at: Thu, 20 May 2021 07:56:18 GMT
+recorded_with: VCR 4.0.0
