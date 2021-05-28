@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: REMITANO_SERVER/api/v1/merchant/merchant_deposit_requests
+    uri: REMITANO_SERVER/api/v1/merchant/merchant_charges
     body:
       encoding: UTF-8
       string: '{"coin_currency":"btc","coin_amount":10.99,"cancelled_or_completed_callback_url":"http://sample.com/123/callback","usec":0}'
@@ -16,9 +16,9 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 20 May 2021 07:56:17 GMT
+      - Fri, 28 May 2021 06:57:05 GMT
       Authorization:
-      - APIAuth REMITANO_KEY:akR0rFptWoW1vcCrks1V0xJT+Zc=
+      - APIAuth REMITANO_KEY:lh+SYbwdMiHcvUIOoYCShHWyLho=
       Content-Length:
       - '123'
       Host:
@@ -33,12 +33,12 @@ http_interactions:
       Cache-Control:
       - no-cache
       Set-Cookie:
-      - _admin_session=5a6392301594387531dc5fe15078d4c7; path=/; expires=Sun, 20 Jun
-        2021 07:56:17 -0000; HttpOnly; SameSite=Lax
+      - _admin_session=4f17e92c648538dc740523b7e693bfeb; path=/; expires=Mon, 28 Jun
+        2021 06:57:05 -0000; HttpOnly; SameSite=Lax
       X-Request-Id:
-      - 8743d580-4833-436c-a7ad-2bdb1ce0d92b
+      - 1ceb0d92-5cdb-4e7c-9067-a696e6406242
       X-Runtime:
-      - '0.188461'
+      - '0.076128'
       Vary:
       - Origin
       Content-Length:
@@ -47,5 +47,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"error":"coin_currency does not have a valid value"}'
     http_version:
-  recorded_at: Thu, 20 May 2021 07:56:17 GMT
+  recorded_at: Fri, 28 May 2021 06:57:05 GMT
 recorded_with: VCR 4.0.0

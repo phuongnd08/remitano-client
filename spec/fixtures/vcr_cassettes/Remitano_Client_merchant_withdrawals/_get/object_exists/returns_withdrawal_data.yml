@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: REMITANO_SERVER/api/v1/merchant/merchant_withdrawal_requests/1?usec=0
+    uri: REMITANO_SERVER/api/v1/merchant/merchant_withdrawals/1?usec=0
     body:
       encoding: US-ASCII
       string: ''
@@ -16,9 +16,9 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 23 May 2021 16:05:13 GMT
+      - Fri, 28 May 2021 06:59:17 GMT
       Authorization:
-      - APIAuth REMITANO_KEY:a3RSQXo+aJaUEGzIYuwPmFD0Uy0=
+      - APIAuth REMITANO_KEY:RiKhLlBte3lVMiwKvehhx+PIZh8=
       Host:
       - localhost:3100
   response:
@@ -29,20 +29,20 @@ http_interactions:
       Content-Type:
       - application/json
       Etag:
-      - W/"0cd3051b89e28c52971b774e340b5e9b"
+      - W/"3ee5ae1a496791d93c7fbb1b3213a6ee"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 3c26b300-ef46-499d-9d31-00e38e5663e2
+      - 9aecd37a-562f-49fd-9e28-908e94bae219
       X-Runtime:
-      - '0.308814'
+      - '0.069540'
       Vary:
       - Origin
       Content-Length:
-      - '417'
+      - '439'
     body:
       encoding: UTF-8
-      string: '{"id":1,"merchant_withdrawal_ref":"mwr2","status":"cancelled","coin_amount":100.0,"coin_currency":"usdt","coin_fee":0.0,"receiver_pay_fee":null,"action_confirmation_id":null,"otp_counter":null,"coin_address":"3BDS42pbFgxDn9uMSCBiWE5BcWFBVPPCAA","destination_tag":null,"remitano_username":null,"remitano_phone_number":null,"cancelled_or_completed_callback_url":"http://dummy.com/111","created_at_timestamp":1621401962}'
+      string: '{"id":1,"ref":"MWR1774298352","merchant_withdrawal_ref":"mwr2","status":"cancelled","coin_amount":100.0,"coin_currency":"usdt","coin_fee":0.0,"receiver_pay_fee":null,"action_confirmation_id":null,"otp_counter":null,"coin_address":"3BDS42pbFgxDn9uMSCBiWE5BcWFBVPPCAA","destination_tag":null,"remitano_username":null,"remitano_phone_number":null,"cancelled_or_completed_callback_url":"http://dummy.com/111","created_at_timestamp":1621401962}'
     http_version:
-  recorded_at: Sun, 23 May 2021 16:05:14 GMT
+  recorded_at: Fri, 28 May 2021 06:59:17 GMT
 recorded_with: VCR 4.0.0

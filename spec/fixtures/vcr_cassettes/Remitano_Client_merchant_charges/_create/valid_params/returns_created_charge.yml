@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: REMITANO_SERVER/api/v1/merchant/merchant_deposit_requests
+    uri: REMITANO_SERVER/api/v1/merchant/merchant_charges
     body:
       encoding: UTF-8
       string: '{"coin_currency":"usdt","coin_amount":10.99,"cancelled_or_completed_callback_url":"http://sample.com/123/callback","usec":0}'
@@ -16,9 +16,9 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 20 May 2021 07:56:16 GMT
+      - Fri, 28 May 2021 06:57:02 GMT
       Authorization:
-      - APIAuth REMITANO_KEY:0pdHyvw02icAuAn3g/zRfu3J2Po=
+      - APIAuth REMITANO_KEY:KAd9sygInnj8CCEmNJSTq1afnwU=
       Content-Length:
       - '124'
       Host:
@@ -31,23 +31,23 @@ http_interactions:
       Content-Type:
       - application/json
       Etag:
-      - W/"0ece713edd013b8fab04d54b911fc1bb"
+      - W/"8342279df77afbcd411d0e0e9223432b"
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _admin_session=47d8924b33b14bf08df29e7d044352a0; path=/; expires=Sun, 20 Jun
-        2021 07:56:17 -0000; HttpOnly; SameSite=Lax
+      - _admin_session=ee5e9ea148444320646db27508a03d2b; path=/; expires=Mon, 28 Jun
+        2021 06:57:02 -0000; HttpOnly; SameSite=Lax
       X-Request-Id:
-      - a73a5639-b76a-48fa-9e1a-e964ee60bad4
+      - ee909bea-653a-4fa1-8e3a-8f45ee4e5f9e
       X-Runtime:
-      - '0.417483'
+      - '0.085582'
       Vary:
       - Origin
       Content-Length:
-      - '250'
+      - '272'
     body:
       encoding: UTF-8
-      string: '{"id":22,"coin_currency":"usdt","coin_amount":10.99,"status":"pending","cancelled_or_completed_callback_url":"http://sample.com/123/callback","remitano_payment_url":"localhost:3200/payment_gateway/pay/MDR5588788611","created_at_timestamp":1621497377}'
+      string: '{"id":63,"coin_currency":"usdt","coin_amount":10.99,"status":"pending","ref":"MDR4027222151","cancelled_or_completed_callback_url":"http://sample.com/123/callback","remitano_payment_url":"localhost:3200/payment_gateway/pay/MDR4027222151","created_at_timestamp":1622185022}'
     http_version:
-  recorded_at: Thu, 20 May 2021 07:56:17 GMT
+  recorded_at: Fri, 28 May 2021 06:57:02 GMT
 recorded_with: VCR 4.0.0

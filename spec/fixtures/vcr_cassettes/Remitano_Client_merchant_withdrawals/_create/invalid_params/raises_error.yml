@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: REMITANO_SERVER/api/v1/merchant/merchant_withdrawal_requests
+    uri: REMITANO_SERVER/api/v1/merchant/merchant_withdrawals
     body:
       encoding: UTF-8
       string: '{"merchant_withdrawal_ref":"akh9r1h29e1","coin_currency":"xrp","coin_amount":10.99,"receiver_pay_fee":true,"cancelled_or_completed_callback_url":"http://sample.com/123/callback","coin_address":"rLpumSZQNJ6Cve7hfQcdkG9rJbJhkSV8AD0","destination_tag":1710676231,"remitano_username":null,"remitano_phone_number":null,"usec":0}'
@@ -16,9 +16,9 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 20 May 2021 07:56:18 GMT
+      - Fri, 28 May 2021 07:02:24 GMT
       Authorization:
-      - APIAuth REMITANO_KEY:Bw+Lsf952767vNETwDo+fr6J1Kw=
+      - APIAuth REMITANO_KEY:nAB2+jda7tI/NBqVgd1UgTKOnhY=
       Content-Length:
       - '323'
       Host:
@@ -33,20 +33,20 @@ http_interactions:
       Cache-Control:
       - no-cache
       Set-Cookie:
-      - _admin_session=85fbf03fd2cd242576e342c9e4ffeeeb; path=/; expires=Sun, 20 Jun
-        2021 07:56:18 -0000; HttpOnly; SameSite=Lax
+      - _admin_session=29a7bfa652f2c6d8fc8dea4a718b792a; path=/; expires=Mon, 28 Jun
+        2021 07:02:25 -0000; HttpOnly; SameSite=Lax
       X-Request-Id:
-      - ec49ca03-519d-46c4-9b7d-4baaec83fe91
+      - 7ed49108-a473-4dfa-9926-e8ac8f710169
       X-Runtime:
-      - '0.172929'
+      - '0.136581'
       Vary:
       - Origin
       Content-Length:
-      - '83'
+      - '122'
     body:
       encoding: UTF-8
-      string: '{"error":"Merchant withdrawal ref has already been taken, Coin address
-        is invalid"}'
+      string: '{"error":"Merchant withdrawal ref has already been taken, Coin amount
+        exceeds available balance, Coin address is invalid"}'
     http_version:
-  recorded_at: Thu, 20 May 2021 07:56:18 GMT
+  recorded_at: Fri, 28 May 2021 07:02:25 GMT
 recorded_with: VCR 4.0.0
