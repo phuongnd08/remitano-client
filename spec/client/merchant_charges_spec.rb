@@ -21,6 +21,7 @@ describe "Remitano::Client#merchant_charges" do
           "coin_currency" => "usdt",
           "created_at_timestamp" => 1620093168,
           "id" => 19,
+          "ref" => "MDR1248236781",
           "remitano_payment_url" => "localhost:3200/payment_gateway/pay/MDR1248236781",
           "status" => "completed"
         )
@@ -55,9 +56,10 @@ describe "Remitano::Client#merchant_charges" do
           "cancelled_or_completed_callback_url" => "http://sample.com/123/callback",
           "coin_amount" => 10.99,
           "coin_currency" => "usdt",
-          "created_at_timestamp" => 1621497377,
-          "id" => 22,
-          "remitano_payment_url" => "localhost:3200/payment_gateway/pay/MDR5588788611",
+          "created_at_timestamp" => 1622185022,
+          "id" => 63,
+          "ref" => "MDR4027222151",
+          "remitano_payment_url" => "localhost:3200/payment_gateway/pay/MDR4027222151",
           "status" => "pending"
         )
       end

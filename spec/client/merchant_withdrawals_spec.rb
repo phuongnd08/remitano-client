@@ -28,6 +28,7 @@ describe "Remitano::Client#merchant_withdrawals" do
           "merchant_withdrawal_ref" => "mwr2",
           "otp_counter" => nil,
           "receiver_pay_fee" => nil,
+          "ref" => "MWR1774298352",
           "remitano_phone_number" => nil,
           "remitano_username" => nil,
           "status" => "cancelled"
@@ -52,7 +53,8 @@ describe "Remitano::Client#merchant_withdrawals" do
           )
         end.to raise_error(
           Remitano::Client::Request::RequestError,
-          "Error 422 {\"error\":\"Merchant withdrawal ref has already been taken, Coin address is invalid\"}"
+          "Error 422 {\"error\":\"Merchant withdrawal ref has already been taken, "\
+          "Coin amount exceeds available balance, Coin address is invalid\"}"
         )
       end
     end
@@ -62,7 +64,7 @@ describe "Remitano::Client#merchant_withdrawals" do
         client = Remitano::Client.default
         expect(client.action_confirmations).to receive(:confirm_by_hotp!).and_call_original
         create_result = client.merchant_withdrawals.create(
-          merchant_withdrawal_ref: "akh9r1h29e16",
+          merchant_withdrawal_ref: "akh9r1h29e19",
           coin_currency: "xrp",
           coin_amount: 10.99,
           receiver_pay_fee: true,
@@ -71,18 +73,19 @@ describe "Remitano::Client#merchant_withdrawals" do
           destination_tag: 1710676231
         )
         expect(create_result).to eq(
-          "action_confirmation_id" => 32,
+          "action_confirmation_id" => 34,
           "cancelled_or_completed_callback_url" => "http://sample.com/123/callback",
           "coin_address" => "rLpumSZQNJ6Cve7hfQcdkG9rJbJhkSV8AD",
           "coin_amount" => 10.99,
           "coin_currency" => "xrp",
           "coin_fee" => 0.00002,
-          "created_at_timestamp" => 1621786247,
+          "created_at_timestamp" => 1622185568,
           "destination_tag" => 1710676231,
-          "id" => 16,
-          "merchant_withdrawal_ref" => "akh9r1h29e16",
-          "otp_counter" => 32,
+          "id" => 18,
+          "merchant_withdrawal_ref" => "akh9r1h29e19",
+          "otp_counter" => 34,
           "receiver_pay_fee" => true,
+          "ref" => "MWR1926186585",
           "remitano_phone_number" => nil,
           "remitano_username" => nil,
           "status" => "pending"
@@ -95,12 +98,13 @@ describe "Remitano::Client#merchant_withdrawals" do
           "coin_amount" => 10.99,
           "coin_currency" => "xrp",
           "coin_fee" => 0.00002,
-          "created_at_timestamp" => 1621786247,
+          "created_at_timestamp" => 1622185568,
           "destination_tag" => 1710676231,
-          "id" => 16,
-          "merchant_withdrawal_ref" => "akh9r1h29e16",
+          "id" => 18,
+          "merchant_withdrawal_ref" => "akh9r1h29e19",
           "otp_counter" => nil,
           "receiver_pay_fee" => true,
+          "ref" => "MWR1926186585",
           "remitano_phone_number" => nil,
           "remitano_username" => nil,
           "status" => "processing"

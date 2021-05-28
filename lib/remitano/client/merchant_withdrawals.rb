@@ -9,7 +9,7 @@ module Remitano
     end
 
     def get(id)
-      config.net.get("/merchant/merchant_withdrawal_requests/#{id}").execute
+      config.net.get("/merchant/merchant_withdrawals/#{id}").execute
     end
 
     def create(
@@ -17,7 +17,7 @@ module Remitano
       coin_address: nil, destination_tag: nil, remitano_username: nil, remitano_phone_number: nil
     )
       withdrawal = config.net.post(
-        "/merchant/merchant_withdrawal_requests",
+        "/merchant/merchant_withdrawals",
         merchant_withdrawal_ref: merchant_withdrawal_ref,
         coin_currency: coin_currency,
         coin_amount: coin_amount,

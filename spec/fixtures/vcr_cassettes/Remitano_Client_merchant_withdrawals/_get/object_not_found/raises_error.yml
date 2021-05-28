@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: REMITANO_SERVER/api/v1/merchant/merchant_withdrawal_requests/invalid_id?usec=0
+    uri: REMITANO_SERVER/api/v1/merchant/merchant_withdrawals/invalid_id?usec=0
     body:
       encoding: US-ASCII
       string: ''
@@ -16,9 +16,9 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 20 May 2021 07:56:17 GMT
+      - Fri, 28 May 2021 06:59:09 GMT
       Authorization:
-      - APIAuth REMITANO_KEY:QQZ9FNArVPdgUUXfTxd5AJvsgpM=
+      - APIAuth REMITANO_KEY:rDKxuq5IYmvGemJYlbZQmN5VuHg=
       Host:
       - localhost:3100
   response:
@@ -31,9 +31,9 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 06dea07b-56c8-4108-8958-9118ac3e3860
+      - 65f83e41-9e23-4de1-8bf8-5cafea49cb36
       X-Runtime:
-      - '0.144596'
+      - '0.081240'
       Vary:
       - Origin
       Content-Length:
@@ -42,5 +42,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"error":"Not found"}'
     http_version:
-  recorded_at: Thu, 20 May 2021 07:56:17 GMT
+  recorded_at: Fri, 28 May 2021 06:59:09 GMT
 recorded_with: VCR 4.0.0
