@@ -56,7 +56,8 @@ client.merchant_charges.get(id)
 client.merchant_charges.create(
   coin_currency: "usdt",
   coin_amount: 10.99,
-  cancelled_or_completed_callback_url: "https://example.com/payments/callback?id=example"
+  cancelled_or_completed_callback_url: "https://example.com/payments/callback?id=example",
+  description: "Example charge"
 )
 ```
 Note: For now, we only support `usdt` as the price coin currency.

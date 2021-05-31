@@ -50,16 +50,18 @@ describe "Remitano::Client#merchant_charges" do
         result = client.merchant_charges.create(
           coin_currency: "usdt",
           coin_amount: 10.99,
-          cancelled_or_completed_callback_url: "http://sample.com/123/callback"
+          cancelled_or_completed_callback_url: "http://sample.com/123/callback",
+          description: "Example charge"
         )
         expect(result).to eq(
           "cancelled_or_completed_callback_url" => "http://sample.com/123/callback",
           "coin_amount" => 10.99,
           "coin_currency" => "usdt",
-          "created_at_timestamp" => 1622185022,
-          "id" => 63,
-          "ref" => "MDR4027222151",
-          "remitano_payment_url" => "localhost:3200/payment_gateway/pay/MDR4027222151",
+          "created_at_timestamp" => 1622393545,
+          "description" => "Example charge",
+          "id" => 64,
+          "ref" => "MDR1341467273",
+          "remitano_payment_url" => "localhost:3200/payment_gateway/pay/MDR1341467273",
           "status" => "pending"
         )
       end
