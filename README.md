@@ -37,7 +37,7 @@ Remitano::Client.default # => the default client
 ```
 or
 ```ruby
-client = new Remitano::Client(
+client = Remitano::Client.new(
   key: YOUR_API_KEY,
   secret: YOUR_API_SECRET,
   authenticator_secret: YOUR_AUTHENTICATOR_SECRET,
