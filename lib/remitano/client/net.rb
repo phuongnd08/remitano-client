@@ -1,8 +1,13 @@
-require 'api-auth'
+# frozen_string_literal: true
+
+require "api-auth"
 
 module Remitano
   class Client::Request
     class RequestError < StandardError; end
+
+    REMITANO_PRODUCTION_SERVER = "https://api.remitano.com"
+    REMITANO_SANDBOX_SERVER = "https://api.remidemo.com"
 
     def initialize(request)
       @request = request
@@ -27,11 +32,12 @@ module Remitano
     end
 
     def self.to_uri(path)
-      return "#{server}/api/v1#{path}"
+      "#{server}/api/v1#{path}"
     end
 
     def self.server
-      @server ||= (ENV['REMITANO_SERVER'] || "https://api.remitano.com")
+      @server ||=
+        ENV["REMITANO_SERVER"] || ENV["REMITANO_SANDBOX"] == "true" ? REMITANO_SANDBOX_SERVER : REMITANO_PRODUCTION_SERVER
     end
 
     def self.public_get(path, params = {})
