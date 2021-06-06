@@ -6,9 +6,6 @@ module Remitano
   class Client::Request
     class RequestError < StandardError; end
 
-    REMITANO_PRODUCTION_SERVER = "https://api.remitano.com"
-    REMITANO_SANDBOX_SERVER = "https://api.remidemo.com"
-
     def initialize(request)
       @request = request
     end
@@ -26,6 +23,9 @@ module Remitano
 
   class Client::Net
     attr_reader :config
+
+    REMITANO_PRODUCTION_SERVER = "https://api.remitano.com"
+    REMITANO_SANDBOX_SERVER = "https://api.remidemo.com"
 
     def initialize(config:)
       @config = config
