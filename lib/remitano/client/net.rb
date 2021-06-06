@@ -36,8 +36,8 @@ module Remitano
     end
 
     def self.server
-      @server ||=
-        ENV["REMITANO_SERVER"] || ENV["REMITANO_SANDBOX"] == "true" ? REMITANO_SANDBOX_SERVER : REMITANO_PRODUCTION_SERVER
+      ENV["REMITANO_SERVER"] ||
+        (ENV["REMITANO_SANDBOX"] == "true" ? REMITANO_SANDBOX_SERVER : REMITANO_PRODUCTION_SERVER)
     end
 
     def self.public_get(path, params = {})
