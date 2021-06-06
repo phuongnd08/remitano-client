@@ -106,6 +106,13 @@ to get the updated information and process accordingly.
 ### Errors
 When receiving non 200-299 http code, a Remitano::Client::Request::RequestError will be raised.
 
+### Sandbox testing
+We have a Testnet at https://remidemo.com.
+
+You could register an account there, then submit a request at [this google form](https://forms.gle/jvJyWPBNwTWfowSm9) with your Remidemo username, so we could help to setup your testing account as a merchant.
+
+After that, you could start your sandbox testing by setting `ENV["REMITANO_SANDBOX"]` to `"true"`.
+
 ## Contributing
 
 1. Fork it
