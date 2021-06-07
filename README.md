@@ -94,14 +94,18 @@ client.merchant_withdrawals.create(
 ```
 
 #### Callbacks
-When Charge or Withdrawal is changed to completed or cancelled in our system, we will send
-a POST callback request to `object.cancelled_or_completed_callback_url` with following
-request json body:
-```ruby
-{ "id" => object.id }
-```
-then you could call `client.merchant_charges.get(id)` or `client.merchant_withdrawals.get(id)`
-to get the updated information and process accordingly.
+##### Charges
+Whenever a charge is changed to completed or cancelled in our system:
+- we will send a POST request to `charge.cancelled_or_completed_callback_url` with `remitano_id` param.
+- if user is still on our site, we will also redirect user to `object.cancelled_or_completed_callback_url` with `remitano_id` param (GET request).
+
+After receiving these callbacks, you could call `client.merchant_charges.get(params[:remitano_id])` to get the updated information and process accordingly.
+
+##### Withdrawals
+Whenever a withdrawal is changed to completed or cancelled in our system:
+- we will send a POST request to `withdrawal.cancelled_or_completed_callback_url` with `remitano_id` param.
+
+After receiving these callbacks, you could call `client.merchant_withdrawals.get(params[:remitano_id])` to get the updated information and process accordingly.
 
 ### Errors
 When receiving non 200-299 http code, a Remitano::Client::Request::RequestError will be raised.
