@@ -21,5 +21,18 @@ module Remitano
         description: description
       ).execute
     end
+
+    def list(status: nil, page: nil, per_page: nil)
+      params = {
+        status: status,
+        page: page,
+        per_page: per_page
+      }
+      params.reject! { |_k, v| v.nil? }
+      config.net.get(
+        "/merchant/merchant_charges",
+        params
+      ).execute
+    end
   end
 end
