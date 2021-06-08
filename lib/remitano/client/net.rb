@@ -85,8 +85,12 @@ module Remitano
 
       usec = Time.now.usec
       if method == :get
-        path += (path.include?("?") ? "&" : "?")
-        path += "usec=#{usec}"
+        uri = URI(path)
+        request_params = URI.decode_www_form(uri.query || "")
+        request_params.concat(params.to_a)
+        request_params << ["usec", usec]
+        uri.query = URI.encode_www_form(request_params)
+        path = uri.to_s
       else
         params[:usec] = usec
         options[:payload] = params.to_json
