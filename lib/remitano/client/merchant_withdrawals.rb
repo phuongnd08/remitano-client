@@ -13,8 +13,9 @@ module Remitano
     end
 
     def create(
-      merchant_withdrawal_ref:, coin_currency:, coin_amount:, receiver_pay_fee:, cancelled_or_completed_callback_url:,
-      coin_address: nil, destination_tag: nil, remitano_username: nil, remitano_phone_number: nil
+      merchant_withdrawal_ref:, coin_currency:, coin_amount:, receiver_pay_fee:,
+      cancelled_or_completed_callback_url: nil, coin_address: nil, destination_tag: nil,
+      remitano_username: nil, remitano_phone_number: nil
     )
       withdrawal = config.net.post(
         "/merchant/merchant_withdrawals",
