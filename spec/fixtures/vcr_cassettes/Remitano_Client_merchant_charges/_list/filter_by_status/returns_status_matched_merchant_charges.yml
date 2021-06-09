@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: REMITANO_SERVER/api/v1/merchant/merchant_charges?status=completed&usec=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (darwin18.6.0 x86_64) ruby/2.4.3p205
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 08 Jun 2021 06:49:26 GMT
+      Authorization:
+      - APIAuth REMITANO_KEY:aQQiAZ1K7tet68cWt/n+IwwTt7o=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - localhost:3100
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"0eee76969e9662634530acc17c48665d"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f0654cfe-ce14-4a43-9fc8-a1d7cdea0c6a
+      X-Runtime:
+      - '0.075517'
+      Vary:
+      - Origin
+      Content-Length:
+      - '2805'
+    body:
+      encoding: UTF-8
+      string: '{"merchant_charges":[{"id":22,"coin_currency":"usdt","coin_amount":10.99,"status":"completed","ref":"MDR5588788611","description":null,"cancelled_or_completed_callback_url":"http://sample.com/123/callback?remitano_id=22","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR5588788611","created_at_timestamp":1621497377,"expired_at_timestamp":0,"payer_name":"buyer"},{"id":21,"coin_currency":"usdt","coin_amount":10.99,"status":"completed","ref":"MDR7006193288","description":null,"cancelled_or_completed_callback_url":"http://sample.com/123/callback?remitano_id=21","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR7006193288","created_at_timestamp":1621401988,"expired_at_timestamp":0,"payer_name":null},{"id":19,"coin_currency":"usdt","coin_amount":100.0,"status":"completed","ref":"MDR1248236781","description":null,"cancelled_or_completed_callback_url":"http://sample.com/123/callback?remitano_id=19","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR1248236781","created_at_timestamp":1620093168,"expired_at_timestamp":0,"payer_name":"buyer"},{"id":18,"coin_currency":"usdt","coin_amount":100.0,"status":"completed","ref":"MDR8901116264","description":null,"cancelled_or_completed_callback_url":null,"remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR8901116264","created_at_timestamp":1620092660,"expired_at_timestamp":0,"payer_name":"buyer"},{"id":17,"coin_currency":"usdt","coin_amount":100.0,"status":"completed","ref":"MDR9240267766","description":null,"cancelled_or_completed_callback_url":null,"remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR9240267766","created_at_timestamp":1620092056,"expired_at_timestamp":0,"payer_name":"sugaro"},{"id":16,"coin_currency":"usdt","coin_amount":10.0,"status":"completed","ref":"MDR7154137395","description":null,"cancelled_or_completed_callback_url":null,"remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR7154137395","created_at_timestamp":1620091757,"expired_at_timestamp":0,"payer_name":"buyer"},{"id":13,"coin_currency":"usdt","coin_amount":100.0,"status":"completed","ref":"MDR6305734111","description":null,"cancelled_or_completed_callback_url":null,"remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR6305734111","created_at_timestamp":1620090431,"expired_at_timestamp":0,"payer_name":"buyer"},{"id":8,"coin_currency":"usdt","coin_amount":100.0,"status":"completed","ref":"MDR1870115800","description":null,"cancelled_or_completed_callback_url":null,"remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR1870115800","created_at_timestamp":1620088257,"expired_at_timestamp":0,"payer_name":"buyer"}],"meta":{"per_page":25,"current_page":1,"next_page":null,"prev_page":null,"total_pages":1,"total_items":8}}'
+    http_version:
+  recorded_at: Tue, 08 Jun 2021 06:49:26 GMT
+recorded_with: VCR 4.0.0

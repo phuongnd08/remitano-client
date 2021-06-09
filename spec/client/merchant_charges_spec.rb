@@ -67,4 +67,43 @@ describe "Remitano::Client#merchant_charges" do
       end
     end
   end
+
+  describe "#list", :vcr do
+    it "returns merchant charges" do
+      client = Remitano::Client.default
+
+      result = client.merchant_charges.list
+      expect(result["merchant_charges"].count).to eq 25
+      expect(result["merchant_charges"].pluck("status").uniq).to match_array(%w[pending cancelled])
+      expect(result["meta"]["current_page"]).to eq 1
+      expect(result["meta"]["per_page"]).to eq 25
+      expect(result["meta"]["total_pages"]).to eq 3
+    end
+
+    context "filter by status" do
+      it "returns status matched merchant charges" do
+        client = Remitano::Client.default
+
+        result = client.merchant_charges.list(status: "completed")
+        expect(result["merchant_charges"].count).to eq 8
+        expect(result["merchant_charges"].pluck("status").uniq).to eq(["completed"])
+        expect(result["meta"]["current_page"]).to eq 1
+        expect(result["meta"]["per_page"]).to eq 25
+        expect(result["meta"]["total_pages"]).to eq 1
+      end
+    end
+
+    context "page and per_page specified" do
+      it "returns merchant charges in specified page" do
+        client = Remitano::Client.default
+
+        result = client.merchant_charges.list(status: "completed", page: 2, per_page: 3)
+        expect(result["merchant_charges"].count).to eq 3
+        expect(result["merchant_charges"].pluck("status").uniq).to eq(["completed"])
+        expect(result["meta"]["current_page"]).to eq 2
+        expect(result["meta"]["per_page"]).to eq 3
+        expect(result["meta"]["total_pages"]).to eq 3
+      end
+    end
+  end
 end

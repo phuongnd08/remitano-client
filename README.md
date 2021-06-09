@@ -47,27 +47,36 @@ client = Remitano::Client.new(
 ### Payment gateway
 Visit https://developers.remitano.com/api-explorer - Merchant section for more information.
 #### Charges
-##### Get
+##### Get charge with remitano id
 ```ruby
 client.merchant_charges.get(id)
 ```
-##### Create
+##### Create charge
 ```ruby
 client.merchant_charges.create(
   coin_currency: "usdt",
   coin_amount: 10.99,
-  cancelled_or_completed_callback_url: "https://example.com/payments/callback?id=example",
-  description: "Example charge"
+  cancelled_or_completed_callback_url: "https://example.com/payments/callback?id=example", # optional
+  description: "Example charge" # optional
 )
 ```
 Note: For now, we only support `usdt` as the price coin currency.
 
+##### Get paginated charge list
+```ruby
+client.merchant_charges.list(
+  status: "completed", # optional
+  page: 2, # optional
+  per_page: 25 # optional
+)
+```
+
 #### Withdrawals
-##### Get
+##### Get withdrawal with remitano id
 ```ruby
 client.merchant_withdrawals.get(id)
 ```
-##### Create
+##### Create withdrawal
 1. Withdraw to external coin address
 ```ruby
 client.merchant_withdrawals.create(
@@ -75,9 +84,9 @@ client.merchant_withdrawals.create(
   coin_currency: "xrp",
   coin_amount: 10.99,
   receiver_pay_fee: true, # defines who will be charged for the withdrawal fee
-  cancelled_or_completed_callback_url: "http://sample.com/123/callback",
+  cancelled_or_completed_callback_url: "http://sample.com/123/callback", # optional
   coin_address: "rLpumSZQNJ6Cve7hfQcdkG9rJbJhkSV8AD0",
-  destination_tag: 1710676231 # include destination_tag if coin_currency is xrp, otherwise, leave it nil
+  destination_tag: 1710676231 # optional, required when coin_currency is xrp
 )
 ```
 2. Withdraw to other remitano account
@@ -90,6 +99,14 @@ client.merchant_withdrawals.create(
   cancelled_or_completed_callback_url: "http://sample.com/123/callback",
   remitano_username: "receiver123",
   remitano_phone_number: "+234 1 123 4567"
+)
+```
+##### Get paginated withdrawal list
+```ruby
+client.merchant_withdrawals.list(
+  status: "completed", # optional
+  page: 2, # optional
+  per_page: 25 # optional
 )
 ```
 

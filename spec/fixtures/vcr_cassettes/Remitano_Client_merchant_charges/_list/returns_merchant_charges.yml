@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: REMITANO_SERVER/api/v1/merchant/merchant_charges?usec=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (darwin18.6.0 x86_64) ruby/2.4.3p205
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 08 Jun 2021 06:49:25 GMT
+      Authorization:
+      - APIAuth REMITANO_KEY:GOXtX2NfJlg/vrrrY4rIA5LwqNg=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - localhost:3100
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"1d7030bc9fe4320d2727b528737ae332"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a31bbda0-95c0-4e86-8bbe-94db7ed4e7c8
+      X-Runtime:
+      - '0.125626'
+      Vary:
+      - Origin
+      Content-Length:
+      - '9190'
+    body:
+      encoding: UTF-8
+      string: '{"merchant_charges":[{"id":68,"coin_currency":"usdt","coin_amount":1.5,"status":"cancelled","ref":"MDR9524587944","description":"Test
+        2","cancelled_or_completed_callback_url":"http://localhost:3000/charges/3/callback?remitano_id=68","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR9524587944","created_at_timestamp":1622530696,"expired_at_timestamp":1622697250,"payer_name":"buyer"},{"id":67,"coin_currency":"usdt","coin_amount":1.5,"status":"pending","ref":"MDR1272205449","description":"Test
+        2","cancelled_or_completed_callback_url":"http://localhost:3000/charges/2/callback?remitano_id=67","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR1272205449","created_at_timestamp":1622530666,"expired_at_timestamp":1622531566,"payer_name":null},{"id":66,"coin_currency":"usdt","coin_amount":1.5,"status":"pending","ref":"MDR3434518800","description":"Test","cancelled_or_completed_callback_url":"http://localhost:3000/charges/1/callback?remitano_id=66","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR3434518800","created_at_timestamp":1622530570,"expired_at_timestamp":1622531470,"payer_name":null},{"id":65,"coin_currency":"usdt","coin_amount":1.5,"status":"pending","ref":"MDR8081755459","description":"Test","cancelled_or_completed_callback_url":"http://localhost:3000/charges/1/callback?remitano_id=65","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR8081755459","created_at_timestamp":1622530332,"expired_at_timestamp":1622531232,"payer_name":null},{"id":64,"coin_currency":"usdt","coin_amount":10.99,"status":"pending","ref":"MDR1341467273","description":"Example
+        charge","cancelled_or_completed_callback_url":"http://sample.com/123/callback?remitano_id=64","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR1341467273","created_at_timestamp":1622393545,"expired_at_timestamp":0,"payer_name":null},{"id":63,"coin_currency":"usdt","coin_amount":10.99,"status":"pending","ref":"MDR4027222151","description":null,"cancelled_or_completed_callback_url":"http://sample.com/123/callback?remitano_id=63","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR4027222151","created_at_timestamp":1622185022,"expired_at_timestamp":0,"payer_name":null},{"id":62,"coin_currency":"usdt","coin_amount":10.99,"status":"pending","ref":"MDR0842867617","description":null,"cancelled_or_completed_callback_url":"http://sample.com/123/callback?remitano_id=62","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR0842867617","created_at_timestamp":1622184982,"expired_at_timestamp":0,"payer_name":null},{"id":61,"coin_currency":"usdt","coin_amount":79.99,"status":"pending","ref":"MDR0436862806","description":"Bag
+        (model D700, white)","cancelled_or_completed_callback_url":"https://example.com/123?remitano_id=61","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR0436862806","created_at_timestamp":1622172198,"expired_at_timestamp":0,"payer_name":"buyer"},{"id":60,"coin_currency":"usdt","coin_amount":79.99,"status":"pending","ref":"MDR7797902493","description":"Bag
+        (model D700, white)","cancelled_or_completed_callback_url":"https://example.com/123?remitano_id=60","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR7797902493","created_at_timestamp":1622172143,"expired_at_timestamp":0,"payer_name":"buyer"},{"id":59,"coin_currency":"usdt","coin_amount":79.99,"status":"pending","ref":"MDR8752689492","description":"Bag
+        (model D700, white)","cancelled_or_completed_callback_url":"https://example.com/123?remitano_id=59","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR8752689492","created_at_timestamp":1622172062,"expired_at_timestamp":0,"payer_name":"buyer"},{"id":58,"coin_currency":"usdt","coin_amount":79.99,"status":"pending","ref":"MDR6769804271","description":"Bag
+        (model D700, white)","cancelled_or_completed_callback_url":"https://example.com/123?remitano_id=58","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR6769804271","created_at_timestamp":1622171943,"expired_at_timestamp":0,"payer_name":"buyer"},{"id":57,"coin_currency":"usdt","coin_amount":79.99,"status":"pending","ref":"MDR9403236023","description":"Bag
+        (model D700, white)","cancelled_or_completed_callback_url":"https://example.com/123?remitano_id=57","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR9403236023","created_at_timestamp":1622171859,"expired_at_timestamp":0,"payer_name":"buyer"},{"id":56,"coin_currency":"usdt","coin_amount":79.99,"status":"pending","ref":"MDR4802890056","description":"Bag
+        (model D700, white)","cancelled_or_completed_callback_url":"https://example.com/123?remitano_id=56","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR4802890056","created_at_timestamp":1622171830,"expired_at_timestamp":0,"payer_name":"buyer"},{"id":55,"coin_currency":"usdt","coin_amount":80.02,"status":"pending","ref":"MDR9662454902","description":"Bag
+        D700 white","cancelled_or_completed_callback_url":"google.com?remitano_id=55","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR9662454902","created_at_timestamp":1622171220,"expired_at_timestamp":0,"payer_name":"buyer"},{"id":54,"coin_currency":"usdt","coin_amount":80.02,"status":"pending","ref":"MDR7447307122","description":"Bag
+        D700 white","cancelled_or_completed_callback_url":"google.com?remitano_id=54","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR7447307122","created_at_timestamp":1622170528,"expired_at_timestamp":0,"payer_name":"buyer"},{"id":53,"coin_currency":"usdt","coin_amount":80.02,"status":"pending","ref":"MDR8615923499","description":"Bag
+        D700 white","cancelled_or_completed_callback_url":"google.com?remitano_id=53","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR8615923499","created_at_timestamp":1622115928,"expired_at_timestamp":0,"payer_name":"buyer"},{"id":52,"coin_currency":"usdt","coin_amount":80.02,"status":"pending","ref":"MDR8867140935","description":"Bag
+        D700 white","cancelled_or_completed_callback_url":"google.com?remitano_id=52","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR8867140935","created_at_timestamp":1622114093,"expired_at_timestamp":0,"payer_name":"buyer"},{"id":51,"coin_currency":"usdt","coin_amount":80.02,"status":"pending","ref":"MDR3345666844","description":"Bag
+        D700 white","cancelled_or_completed_callback_url":"google.com?remitano_id=51","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR3345666844","created_at_timestamp":1622114078,"expired_at_timestamp":0,"payer_name":"buyer"},{"id":50,"coin_currency":"usdt","coin_amount":80.02,"status":"pending","ref":"MDR7894014215","description":"Bag
+        D700 white","cancelled_or_completed_callback_url":"google.com?remitano_id=50","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR7894014215","created_at_timestamp":1622114053,"expired_at_timestamp":0,"payer_name":"buyer"},{"id":49,"coin_currency":"usdt","coin_amount":80.02,"status":"pending","ref":"MDR1461537249","description":"Bag
+        D700 white","cancelled_or_completed_callback_url":"google.com?remitano_id=49","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR1461537249","created_at_timestamp":1622114048,"expired_at_timestamp":0,"payer_name":"buyer"},{"id":48,"coin_currency":"usdt","coin_amount":80.02,"status":"pending","ref":"MDR7560852060","description":"Bag
+        D700 white","cancelled_or_completed_callback_url":"google.com?remitano_id=48","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR7560852060","created_at_timestamp":1622113980,"expired_at_timestamp":0,"payer_name":"buyer"},{"id":47,"coin_currency":"usdt","coin_amount":80.02,"status":"pending","ref":"MDR2426394496","description":"Bag
+        D700 white","cancelled_or_completed_callback_url":"google.com?remitano_id=47","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR2426394496","created_at_timestamp":1622113969,"expired_at_timestamp":0,"payer_name":"buyer"},{"id":46,"coin_currency":"usdt","coin_amount":80.02,"status":"pending","ref":"MDR3169255662","description":"Bag
+        D700 white","cancelled_or_completed_callback_url":"google.com?remitano_id=46","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR3169255662","created_at_timestamp":1622113940,"expired_at_timestamp":0,"payer_name":"buyer"},{"id":45,"coin_currency":"usdt","coin_amount":80.02,"status":"pending","ref":"MDR2546037859","description":"Bag
+        D700 white","cancelled_or_completed_callback_url":"google.com?remitano_id=45","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR2546037859","created_at_timestamp":1622113934,"expired_at_timestamp":0,"payer_name":"buyer"},{"id":44,"coin_currency":"usdt","coin_amount":80.02,"status":"pending","ref":"MDR9221071840","description":"Bag
+        D700 white","cancelled_or_completed_callback_url":"google.com?remitano_id=44","remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR9221071840","created_at_timestamp":1622113925,"expired_at_timestamp":0,"payer_name":"buyer"}],"meta":{"per_page":25,"current_page":1,"next_page":2,"prev_page":null,"total_pages":3,"total_items":66}}'
+    http_version:
+  recorded_at: Tue, 08 Jun 2021 06:49:25 GMT
+recorded_with: VCR 4.0.0

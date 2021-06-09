@@ -112,4 +112,43 @@ describe "Remitano::Client#merchant_withdrawals" do
       end
     end
   end
+
+  describe "#list", :vcr do
+    it "returns merchant withdrawals" do
+      client = Remitano::Client.default
+
+      result = client.merchant_withdrawals.list
+      expect(result["merchant_withdrawals"].count).to eq 18
+      expect(result["merchant_withdrawals"].pluck("status").uniq).to match_array(%w[pending processing cancelled])
+      expect(result["meta"]["current_page"]).to eq 1
+      expect(result["meta"]["per_page"]).to eq 25
+      expect(result["meta"]["total_pages"]).to eq 1
+    end
+
+    context "filter by status" do
+      it "returns status matched merchant withdrawals" do
+        client = Remitano::Client.default
+
+        result = client.merchant_withdrawals.list(status: "cancelled")
+        expect(result["merchant_withdrawals"].count).to eq 9
+        expect(result["merchant_withdrawals"].pluck("status").uniq).to eq(["cancelled"])
+        expect(result["meta"]["current_page"]).to eq 1
+        expect(result["meta"]["per_page"]).to eq 25
+        expect(result["meta"]["total_pages"]).to eq 1
+      end
+    end
+
+    context "page and per_page specified" do
+      it "returns merchant withdrawals in specified page" do
+        client = Remitano::Client.default
+
+        result = client.merchant_withdrawals.list(status: "cancelled", page: 2, per_page: 5)
+        expect(result["merchant_withdrawals"].count).to eq 4
+        expect(result["merchant_withdrawals"].pluck("status").uniq).to eq(["cancelled"])
+        expect(result["meta"]["current_page"]).to eq 2
+        expect(result["meta"]["per_page"]).to eq 5
+        expect(result["meta"]["total_pages"]).to eq 2
+      end
+    end
+  end
 end
