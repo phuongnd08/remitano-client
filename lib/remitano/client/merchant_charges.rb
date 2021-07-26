@@ -12,13 +12,23 @@ module Remitano
       config.net.get("/merchant/merchant_charges/#{id}").execute
     end
 
-    def create(coin_currency:, coin_amount:, cancelled_or_completed_callback_url: nil, description: nil)
-      config.net.post(
-        "/merchant/merchant_charges",
+    def create(
+      coin_currency: nil, coin_amount: nil,
+      fiat_currency: nil, fiat_amount: nil,
+      cancelled_or_completed_callback_url: nil, description: nil
+    )
+      params = {
         coin_currency: coin_currency,
         coin_amount: coin_amount,
+        fiat_currency: fiat_currency,
+        fiat_amount: fiat_amount,
         cancelled_or_completed_callback_url: cancelled_or_completed_callback_url,
         description: description
+      }
+      params.reject! { |_k, v| v.nil? }
+      config.net.post(
+        "/merchant/merchant_charges",
+        params
       ).execute
     end
 

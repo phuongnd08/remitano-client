@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: REMITANO_SERVER/api/v1/merchant/merchant_charges
+    body:
+      encoding: UTF-8
+      string: '{"cancelled_or_completed_callback_url":"http://sample.com/123/callback","description":"Example
+        charge","fiat_currency":"AUD","fiat_amount":10.99,"usec":0}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (darwin18.6.0 x86_64) ruby/2.4.3p205
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 26 Jul 2021 07:51:33 GMT
+      Authorization:
+      - APIAuth REMITANO_KEY:KD03wd4SZ3NB442kXIPrFHWVXPc=
+      Content-Length:
+      - '154'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - localhost:3100
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"e189359c5e2e6db3ea9f5067272010fe"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _admin_session=bacd8e8e16b16168db05943a4a3ae910; path=/; expires=Thu, 26 Aug
+        2021 07:51:33 -0000; HttpOnly; SameSite=Lax
+      X-Request-Id:
+      - f85f6eee-e33f-4303-b95c-c29c45c9b6a6
+      X-Runtime:
+      - '0.181979'
+      Vary:
+      - Origin
+      Content-Length:
+      - '478'
+    body:
+      encoding: UTF-8
+      string: '{"id":144,"coin_currency":"usdt","coin_amount":7.33,"fiat_currency":"AUD","fiat_amount":10.99,"status":"pending","ref":"MDR0289485559","description":"Example
+        charge","cancelled_or_completed_callback_url":"http://sample.com/123/callback?remitano_id=144","cancelled_or_completed_redirect_url":null,"remitano_payment_url":"http://localhost:3200/payment_gateway/pay/MDR0289485559","created_at_timestamp":1627285893,"expired_at_timestamp":1627286793,"payer_name":null,"payload":null}'
+    http_version:
+  recorded_at: Mon, 26 Jul 2021 07:51:33 GMT
+recorded_with: VCR 4.0.0
