@@ -43,7 +43,7 @@ describe "Remitano::Client#merchant_charges" do
       end
     end
 
-    context "valid params" do
+    context "valid params, currency is coin" do
       it "returns created charge" do
         client = Remitano::Client.default
 
@@ -54,14 +54,50 @@ describe "Remitano::Client#merchant_charges" do
           description: "Example charge"
         )
         expect(result).to eq(
-          "cancelled_or_completed_callback_url" => "http://sample.com/123/callback",
+          "cancelled_or_completed_callback_url" => "http://sample.com/123/callback?remitano_id=146",
+          "cancelled_or_completed_redirect_url" => nil,
           "coin_amount" => 10.99,
           "coin_currency" => "usdt",
-          "created_at_timestamp" => 1622393545,
+          "created_at_timestamp" => 1627286204,
           "description" => "Example charge",
-          "id" => 64,
-          "ref" => "MDR1341467273",
-          "remitano_payment_url" => "localhost:3200/payment_gateway/pay/MDR1341467273",
+          "expired_at_timestamp" => 1627287104,
+          "fiat_amount" => nil,
+          "fiat_currency" => nil,
+          "id" => 146,
+          "payer_name" => nil,
+          "payload" => nil,
+          "ref" => "MDR1591502249",
+          "remitano_payment_url" => "http://localhost:3200/payment_gateway/pay/MDR1591502249",
+          "status" => "pending"
+        )
+      end
+    end
+
+    context "valid params, currency is fiat" do
+      it "returns created charge" do
+        client = Remitano::Client.default
+
+        result = client.merchant_charges.create(
+          fiat_currency: "AUD",
+          fiat_amount: 10.99,
+          cancelled_or_completed_callback_url: "http://sample.com/123/callback",
+          description: "Example charge"
+        )
+        expect(result).to eq(
+          "cancelled_or_completed_callback_url" => "http://sample.com/123/callback?remitano_id=144",
+          "cancelled_or_completed_redirect_url" => nil,
+          "coin_amount" => 7.33,
+          "coin_currency" => "usdt",
+          "created_at_timestamp" => 1627285893,
+          "expired_at_timestamp" => 1627286793,
+          "fiat_amount" => 10.99,
+          "fiat_currency" => "AUD",
+          "description" => "Example charge",
+          "id" => 144,
+          "payer_name" => nil,
+          "payload" => nil,
+          "ref" => "MDR0289485559",
+          "remitano_payment_url" => "http://localhost:3200/payment_gateway/pay/MDR0289485559",
           "status" => "pending"
         )
       end
