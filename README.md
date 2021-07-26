@@ -52,6 +52,8 @@ Visit https://developers.remitano.com/api-explorer - Merchant section for more i
 client.merchant_charges.get(id)
 ```
 ##### Create charge
+1. With coin currency
+Note: For now, we only support `usdt` as the price coin currency.
 ```ruby
 client.merchant_charges.create(
   coin_currency: "usdt",
@@ -60,7 +62,16 @@ client.merchant_charges.create(
   description: "Example charge" # optional
 )
 ```
-Note: For now, we only support `usdt` as the price coin currency.
+2. With fiat currency
+Note: We support fiat currency of 56 countries that Remitano are supporting, i.e., `USD`, `AUD`. (You could find entire list in our [developer docs](https://developers.remitano.com/docs/getting-started/getting-started)).
+```ruby
+client.merchant_charges.create(
+  fiat_currency: "AUD",
+  fiat_amount: 10.99,
+  cancelled_or_completed_callback_url: "https://example.com/payments/callback?id=example", # optional
+  description: "Example charge" # optional
+)
+```
 
 ##### Get paginated charge list
 ```ruby
