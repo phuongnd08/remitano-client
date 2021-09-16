@@ -19,6 +19,7 @@ Gem::Specification.new do |spec|
   spec.licenses = ["MIT"]
   spec.require_paths = ["lib"]
   spec.summary = "Remitano Ruby API"
+  spec.metadata = { "github_repo" => "ssh://github.com/remitano/remitano-ruby" }
 
   spec.add_runtime_dependency("activesupport", [">= 4.2.10"])
   spec.add_runtime_dependency("rest-client", [">= 1.7.3"])

@@ -23,6 +23,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{Ruby API for use with Remitano.}
   gem.email = "phuongnd08@gmail.com"
   gem.authors = ["Phuong Gia Su"]
+  gem.metadata = { "github_repo" => "ssh://github.com/remitano/remitano-ruby" }
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
