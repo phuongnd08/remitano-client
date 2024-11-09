@@ -31,8 +31,9 @@ module Remitano
       @config = config
     end
 
-    def self.to_uri(path)
-      "#{server}/api/v1#{path}"
+    def self.to_uri(path, api_version = "v1")
+      api_version ||= "v1"
+      "#{server}/api/#{api_version}#{path}"
     end
 
     def self.server
@@ -55,8 +56,8 @@ module Remitano
       Remitano::Client::Request.new(req)
     end
 
-    def get(path, params={})
-      request = new_request(:get, path, params)
+    def get(path, params={}, api_config={})
+      request = new_request(:get, path, params, api_config)
       sign_request(request)
     end
 
@@ -75,7 +76,7 @@ module Remitano
       sign_request(request)
     end
 
-    def new_request(method, path, params={})
+    def new_request(method, path, params={}, api_config={})
       p [:new_request, method, path] if config.verbose
 
       options = {
@@ -95,8 +96,7 @@ module Remitano
         params[:usec] = usec
         options[:payload] = params.to_json
       end
-
-      options[:url] = self.class.to_uri(path)
+      options[:url] = self.class.to_uri(path, api_config[:api_version])
 
       RestClient::Request.new(options)
     end

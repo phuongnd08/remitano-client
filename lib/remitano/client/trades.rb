@@ -4,13 +4,15 @@ module Remitano
     def active(buy_or_sell, page: nil)
       options = { trade_type: buy_or_sell, trade_status: "active", coin_currency: coin }
       (options[:page] = page) if page
-      config.net.get("/trades?#{options.to_query}").execute
+      api_config = { api_version: "v3" }
+      config.net.get("/trades?#{options.to_query}", {}, api_config).execute
     end
 
     def completed(buy_or_sell, page: nil)
       options = { trade_type: buy_or_sell, trade_status: "completed", coin_currency: coin }
       (options[:page] = page) if page
-      config.net.get("/trades?#{options.to_query}").execute
+      api_config = { api_version: "v3" }
+      config.net.get("/trades?#{options.to_query}", {}, api_config).execute
     end
 
     def release(trade_ref)
